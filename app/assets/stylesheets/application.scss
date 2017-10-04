@@ -1,0 +1,229 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require jquery-ui
+*= require_tree .
+*= require_self
+*/
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap3-switch";
+@import "font-awesome";
+
+
+
+.agenda-day {
+  height: 500px;
+  background: #999;
+  border: 1px solid #222;
+
+  .available-test {
+    background: blue;
+    height: 403px;
+    top: 20px;
+    position: absolute;
+    width: 80%;
+    z-index: 1;
+  }
+
+  .unavailable-test {
+    top: 98px;
+    position: absolute;
+    background: white;
+    width: 80%;
+    height: 66px;
+    z-index: 2;
+  }
+}
+
+.avatar {
+  width: 250px;
+}
+
+.bootstrap-switch {
+    width: 80px !important;
+  .bootstrap-switch-handle-on, .bootstrap-switch-handle-off {
+    width: 40px !important;
+  }
+  * {
+    font-size: 10px !important;
+  }
+}
+
+.col-md-1.col-day {
+  min-height: 150px;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0px;
+}
+
+@media (max-width: 768px){
+  .time {
+    width: 48%;
+    display: inline;
+  }
+  .navbar-message {
+    float: right;
+    margin-right: 15px;
+    padding: 9px 10px;
+    margin-top: 5px;
+    font-size: 25px;
+  }
+}
+@media (min-width: 768px){
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+    *width: 100%;
+  }
+  .navbar-message { display: none }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+  .modal-dialog {
+    width: 900px !important;
+  }
+  .navbar {
+    margin-bottom: 0px;
+  }
+}
+
+/**
+*  The following is not really needed in this case
+*  Only to demonstrate the usage of @media for large screens
+*/
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+}
+
+
+// Card start
+
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+}
+
+.card-img-top {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.card-title {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+}
+
+.card-text {
+    clear: both;
+    margin-top: .5em;
+    color: rgba(0, 0, 0, .68);
+}
+
+.card-footer {
+    font-size: 1em;
+    position: static;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: .75em 1em;
+    color: rgba(0, 0, 0, .4);
+    border-top: 1px solid rgba(0, 0, 0, .05) !important;
+    background: #fff;
+}
+
+.card-inverse .btn {
+    border: 1px solid rgba(0, 0, 0, .05);
+}
+
+.profile {
+    position: absolute;
+    top: -12px;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.profile-avatar {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.profile-inline {
+    position: relative;
+    top: 0;
+    display: inline-block;
+}
+
+.profile-inline ~ .card-title {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.meta {
+    font-size: 1em;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a:hover {
+    color: rgba(0, 0, 0, .87);
+}
+
+// Card end

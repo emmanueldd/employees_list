@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Famousbarber
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+  %body{"data-action": content_for(:action_name) || action_name, "data-controller": content_for(:controller_name) || controller_name}
+    = render "interface/navbar"
+    #wrapper
+      -# %div{class: ('container' unless controller_name == 'home' )}
+      = yield
+      = render 'layouts/footer'

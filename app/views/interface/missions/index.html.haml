@@ -1,0 +1,10 @@
+.container
+  = link_to 'New mission', new_interface_mission_path, class: 'btn btn-default'
+
+  %br
+  %br
+  - @mission.each do |mission|
+    = mission.name
+    %hr
+    = mission.description
+    %br

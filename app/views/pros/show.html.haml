@@ -1,0 +1,357 @@
+-# .col-md-8
+-#   description
+-# .col-md-4
+-#   = image_tag @pro.avatar, class: 'avatar'
+-#   %br
+-#   photo
+-#   = @pro.email
+-#
+
+/ Header Container / End
+/
+  Slider
+  \==================================================
+.listing-slider.mfp-gallery-container.margin-bottom-0
+  %a.item.mfp-gallery{"data-background-image" => "images/single-listing-01.jpg", :href => "images/single-listing-01.jpg", :title => "Title 1"}
+  %a.item.mfp-gallery{"data-background-image" => "images/single-listing-02.jpg", :href => "images/single-listing-02.jpg", :title => "Title 3"}
+  %a.item.mfp-gallery{"data-background-image" => "images/single-listing-03.jpg", :href => "images/single-listing-03.jpg", :title => "Title 2"}
+  %a.item.mfp-gallery{"data-background-image" => "images/single-listing-04.jpg", :href => "images/single-listing-04.jpg", :title => "Title 4"}
+/
+  Content
+  \==================================================
+.container
+  .row.sticky-wrapper
+    .col-lg-8.col-md-8.padding-right-30
+      / Titlebar
+      #titlebar.listing-titlebar
+        .listing-titlebar-title
+          %h2
+            Burger House
+            %span.listing-tag Eat  Drink
+          %span
+            %a.listing-address{:href => "#listing-location"}
+              %i.fa.fa-map-marker
+              2726 Shinn Street, New York
+          .star-rating{"data-rating" => "5"}
+            .rating-counter
+              %a{:href => "#listing-reviews"} (31 reviews)
+      / Listing Nav
+      #listing-nav.listing-nav-container
+        %ul.listing-nav
+          %li
+            %a.active{:href => "#listing-overview"} Overview
+          %li
+            %a{:href => "#listing-pricing-list"} Pricing
+          %li
+            %a{:href => "#listing-location"} Location
+          %li
+            %a{:href => "#listing-reviews"} Reviews
+          %li
+            %a{:href => "#add-review"} Add Review
+      / Overview
+      #listing-overview.listing-section
+        / Description
+        %p
+          Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus.
+        %p
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.
+        / Amenities
+        %h3.listing-desc-headline Amenities
+        %ul.listing-features.checkboxes.margin-top-0
+          %li Elevator in building
+          %li Friendly workspace
+          %li Instant Book
+          %li Wireless Internet
+          %li Free parking on premises
+          %li Free parking on street
+      / Food Menu
+      #listing-pricing-list.listing-section
+        %h3.listing-desc-headline.margin-top-70.margin-bottom-30 Pricing
+        .show-more
+          .pricing-list-container
+            / Food List
+            %h4 Burgers
+            %ul
+              %li
+                %h5 Classic Burger
+                %p Beef, salad, mayonnaise, spicey relish, cheese
+                %span $6
+              %li
+                %h5 Cheddar Burger
+                %p Cheddar cheese, lettuce, tomato, onion, dill pickles
+                %span $6
+              %li
+                %h5 Veggie Burger
+                %p Panko crumbed and fried, grilled peppers and mushroom
+                %span $6
+              %li
+                %h5 Chicken Burger
+                %p Cheese, chicken fillet, avocado, bacon, tomatoes, basil
+                %span $6
+            / Food List
+            %h4 Drinks
+            %ul
+              %li
+                %h5 Frozen Shake
+                %span $4
+              %li
+                %h5 Orange Juice
+                %span $4
+              %li
+                %h5 Beer
+                %span $4
+              %li
+                %h5 Water
+                %span Free
+        %a.show-more-button{"data-less-title" => "Show Less", "data-more-title" => "Show More", :href => "#"}
+          %i.fa.fa-angle-down
+      / Food Menu / End
+      / Location
+      #listing-location.listing-section
+        %h3.listing-desc-headline.margin-top-60.margin-bottom-30 Location
+        #singleListingMap-container
+          #singleListingMap{"data-latitude" => "40.70437865245596", "data-longitude" => "-73.98674011230469", "data-map-icon" => "im im-icon-Hamburger"}
+          %a#streetView{:href => "#"} Street View
+      / Reviews
+      #listing-reviews.listing-section
+        %h3.listing-desc-headline.margin-top-75.margin-bottom-20
+          Reviews
+          %span (12)
+        .clearfix
+        / Reviews
+        %section.comments.listing-reviews
+          %ul
+            %li
+              .avatar
+                %img{:alt => "", :src => "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=70"}/
+              .comment-content
+                .arrow-comment
+                .comment-by
+                  Kathy Brown
+                  %span.date June 2017
+                  .star-rating{"data-rating" => "5"}
+                %p Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus
+                .review-images.mfp-gallery-container
+                  %a.mfp-gallery{:href => "images/review-image-01.jpg"}
+                    %img{:alt => "", :src => "images/review-image-01.jpg"}/
+                  %a.rate-review{:href => "#"}
+                    %i.sl.sl-icon-like
+                    Helpful Review
+                    %span 12
+              %li
+                .avatar
+                  %img{:alt => "", :src => "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=70"}/
+                .comment-content
+                  .arrow-comment
+                  .comment-by
+                    John Doe
+                    %span.date May 2017
+                    .star-rating{"data-rating" => "4"}
+                  %p Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.
+                  %a.rate-review{:href => "#"}
+                    %i.sl.sl-icon-like
+                    Helpful Review
+                    %span 2
+              %li
+                .avatar
+                  %img{:alt => "", :src => "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=70"}/
+                .comment-content
+                  .arrow-comment
+                  .comment-by
+                    Kathy Brown
+                    %span.date June 2017
+                    .star-rating{"data-rating" => "5"}
+                  %p Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus
+                  .review-images.mfp-gallery-container
+                    %a.mfp-gallery{:href => "images/review-image-02.jpg"}
+                      %img{:alt => "", :src => "images/review-image-02.jpg"}/
+                      %a.mfp-gallery{:href => "images/review-image-03.jpg"}
+                        %img{:alt => "", :src => "images/review-image-03.jpg"}/
+                      %a.rate-review{:href => "#"}
+                        %i.sl.sl-icon-like
+                        Helpful Review
+                        %span 4
+                  %li
+                    .avatar
+                      %img{:alt => "", :src => "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=70"}/
+                    .comment-content
+                      .arrow-comment
+                      .comment-by
+                        John Doe
+                        %span.date May 2017
+                        .star-rating{"data-rating" => "5"}
+                      %p Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.
+                      %a.rate-review{:href => "#"}
+                        %i.sl.sl-icon-like
+                        Helpful Review
+              / Pagination
+              .clearfix
+              .row
+                .col-md-12
+                  / Pagination
+                  .pagination-container.margin-top-30
+                    %nav.pagination
+                      %ul
+                        %li
+                          %a.current-page{:href => "#"} 1
+                        %li
+                          %a{:href => "#"} 2
+                        %li
+                          %a{:href => "#"}
+                            %i.sl.sl-icon-arrow-right
+              .clearfix
+              / Pagination / End
+            / Add Review Box
+            #add-review.add-review-box
+              / Add Review
+              %h3.listing-desc-headline.margin-bottom-20 Add Review
+              %span.leave-rating-title Your rating for this listing
+              / Rating / Upload Button
+              .row
+                .col-md-6
+                  / Leave Rating
+                  .clearfix
+                  .leave-rating.margin-bottom-30
+                    %input#rating-1{:name => "rating", :type => "radio", :value => "1"}/
+                    %label.fa.fa-star{:for => "rating-1"}
+                    %input#rating-2{:name => "rating", :type => "radio", :value => "2"}/
+                    %label.fa.fa-star{:for => "rating-2"}
+                    %input#rating-3{:name => "rating", :type => "radio", :value => "3"}/
+                    %label.fa.fa-star{:for => "rating-3"}
+                    %input#rating-4{:name => "rating", :type => "radio", :value => "4"}/
+                    %label.fa.fa-star{:for => "rating-4"}
+                    %input#rating-5{:name => "rating", :type => "radio", :value => "5"}/
+                    %label.fa.fa-star{:for => "rating-5"}
+                  .clearfix
+                .col-md-6
+                  / Uplaod Photos
+                  .add-review-photos.margin-bottom-30
+                    .photoUpload
+                      %span
+                        %i.sl.sl-icon-arrow-up-circle
+                        Upload Photos
+                      %input.upload{:type => "file"}/
+              / Review Comment
+              %form#add-comment.add-comment
+                %fieldset
+                  .row
+                    .col-md-6
+                      %label Name:
+                      %input{:type => "text", :value => ""}/
+                    .col-md-6
+                      %label Email:
+                      %input{:type => "text", :value => ""}/
+                  %div
+                    %label Review:
+                    %textarea{:cols => "40", :rows => "3"}
+                %button.button Submit Review
+                .clearfix
+            / Add Review Box / End
+          /
+            Sidebar
+            \==================================================
+      .col-lg-4.col-md-4.margin-top-75.sticky
+        / Book Now
+        .boxed-widget
+          %h3
+            %i.fa.fa-calendar-check-o
+            Book a Table
+          .row.with-forms.margin-top-0
+            / Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker
+            .col-lg-6.col-md-12
+              %input#booking-date{"data-lang" => "en", "data-large-mode" => "true", "data-max-year" => "2020", "data-min-year" => "2017", :type => "text"}
+              / Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker
+              .col-lg-6.col-md-12
+                %input#booking-time{:type => "text", :value => "9:00 am"}
+              / progress button animation handled via custom.js
+              %button.progress-button.button.fullwidth.margin-top-5
+                %span Book Now
+            / Book Now / End
+            / Contact
+            .boxed-widget.margin-top-35
+              %h3
+                %i.sl.sl-icon-pin
+                Contact
+              %ul.listing-details-sidebar
+                %li
+                  %i.sl.sl-icon-phone
+                  (123) 123-456
+                %li
+                  %i.sl.sl-icon-globe
+                  %a{:href => "#"} http://example.com
+                %li
+                  %i.fa.fa-envelope-o
+                  %a{:href => "#"} info@example.com
+              %ul.listing-details-sidebar.social-profiles
+                %li
+                  %a.facebook-profile{:href => "#"}
+                    %i.fa.fa-facebook-square
+                    Facebook
+                %li
+                  %a.twitter-profile{:href => "#"}
+                    %i.fa.fa-twitter
+                    Twitter
+                / <li><a href="#" class="gplus-profile"><i class="fa fa-google-plus"></i> Google Plus</a></li>
+              / Reply to review popup
+              #small-dialog.zoom-anim-dialog.mfp-hide
+                .small-dialog-header
+                  %h3 Send Message
+                .message-reply.margin-top-0
+                  %textarea{:cols => "40", :placeholder => "Your message to Burger House", :rows => "3"}
+                  %button.button Send Message
+              %a.send-message-to-owner.button.popup-with-zoom-anim{:href => "#small-dialog"}
+                %i.sl.sl-icon-envelope-open
+                Send Message
+            / Contact / End
+            / Opening Hours
+            .boxed-widget.opening-hours.margin-top-35
+              .listing-badge.now-open Now Open
+              %h3
+                %i.sl.sl-icon-clock
+                Opening Hours
+              %ul
+                %li
+                  Monday
+                  %span 9 AM - 5 PM
+                %li
+                  Tuesday
+                  %span 9 AM - 5 PM
+                %li
+                  Wednesday
+                  %span 9 AM - 5 PM
+                %li
+                  Thursday
+                  %span 9 AM - 5 PM
+                %li
+                  Friday
+                  %span 9 AM - 5 PM
+                %li
+                  Saturday
+                  %span 9 AM - 3 PM
+                %li
+                  Sunday
+                  %span Closed
+            / Opening Hours / End
+            / Share / Like
+            .listing-share.margin-top-40.margin-bottom-40.no-border
+              %button.like-button
+                %span.like-icon
+                Bookmark this listing
+              %span 159 people bookmarked this place
+              / Share Buttons
+              %ul.share-buttons.margin-top-40.margin-bottom-0
+                %li
+                  %a.fb-share{:href => "#"}
+                    %i.fa.fa-facebook
+                    Share
+                %li
+                  %a.twitter-share{:href => "#"}
+                    %i.fa.fa-twitter
+                    Tweet
+                %li
+                  %a.gplus-share{:href => "#"}
+                    %i.fa.fa-google-plus
+                    Share
+                / <li><a class="pinterest-share" href="#"><i class="fa fa-pinterest-p"></i> Pin</a></li>
+              .clearfix
+          / Sidebar / End

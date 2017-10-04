@@ -1,0 +1,6 @@
+.container
+  = simple_form_for([:interface, @photo], html: { class: 'form-horizontal' }) do |form|
+    = form.input :photo
+    = form.input :name
+    = form.input :description
+    = form.button :submit

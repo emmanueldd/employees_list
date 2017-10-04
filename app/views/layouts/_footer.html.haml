@@ -1,0 +1,52 @@
+-# Footer
+#footer.dark
+  -# / Main
+  .container
+    .row
+      .col-md-5.col-sm-6
+        = image_tag 'logo.jpg', class: 'footer-logo'
+        %br/
+        %br/
+        %p Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.
+      .col-md-4.col-sm-6
+        %h4 Helpful Links
+        %ul.footer-links
+          %li
+            %a{:href => "#"} Login
+        %ul.footer-links
+          %li
+            %a{:href => "#"} FAQ
+        .clearfix
+      .col-md-3.col-sm-12
+        %h4 Contact Us
+        .text-widget
+          %span 12345 Little Lonsdale St, Melbourne
+          %br/
+          Phone:
+          %span (123) 123-456
+          %br/
+          E-Mail:
+          %span
+            %a{:href => "#"} office@example.com
+          %br/
+        %ul.social-icons.margin-top-20
+          %li
+            %a.facebook{:href => "#"}
+              %i.icon-facebook
+          %li
+            %a.twitter{:href => "#"}
+              %i.icon-twitter
+          %li
+            %a.gplus{:href => "#"}
+              %i.icon-gplus
+          %li
+            %a.vimeo{:href => "#"}
+              %i.icon-vimeo
+    -# / Copyright
+    .row
+      .col-md-12
+        .copyrights © 2017 Listeo. All Rights Reserved.
+-# / Footer / End
+-# / Back To Top Button
+#backtotop
+  %a{:href => "#"}

@@ -1,0 +1,4 @@
+- form = locales[:form]
+= form.input_field :open, as: :boolean, class: 'switch-btn btn-sm'
+= form.input :start_time, as: :time, minute_step: 15
+= form.input :end_time, as: :time, minute_step: 15

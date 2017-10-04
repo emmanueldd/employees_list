@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: business_hours
+#
+#  id         :integer          not null, primary key
+#  pro_id     :integer
+#  date       :date
+#  week_day   :integer
+#  start_time :time
+#  end_time   :time
+#  open       :boolean          default(TRUE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pro: one
+  date: 2017-09-11
+  week_day: MyString
+  start_time: MyString
+  end_time: MyString
+  open: false
+
+two:
+  pro: two
+  date: 2017-09-11
+  week_day: MyString
+  start_time: MyString
+  end_time: MyString
+  open: false

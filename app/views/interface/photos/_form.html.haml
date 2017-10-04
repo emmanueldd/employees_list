@@ -1,0 +1,7 @@
+= simple_form_for([:interface, @photo], html: { class: 'form-horizontal' }) do |form|
+  = form.association :parent, collection: @parent_missions
+  = form.input :name
+  = form.input :description
+  = form.input :duration
+  = form.input :price
+  = form.button :submit

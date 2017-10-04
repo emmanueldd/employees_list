@@ -1,0 +1,9 @@
+%h2 Log in
+= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f|
+  .form-inputs
+    = f.input :email, required: false, autofocus: true
+    = f.input :password, required: false
+    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+  .form-actions
+    = f.button :submit, "Log in"
+= render "users/shared/links", resource_name: devise_mapping_for('User').name, devise_mapping: devise_mapping_for('User'), resource_class: devise_mapping_for('User').to

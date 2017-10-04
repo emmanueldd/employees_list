@@ -1,0 +1,9 @@
+.container
+  %h1 Metrics overview
+  %hr
+  %h1 Bookings overview
+  .row.seven-cols
+    - date = DateTime.now() - 1.day
+    - (0..6).each do |index|
+      = render 'interface/bookings/calendar', locales: { index: index, date: date }
+  %hr

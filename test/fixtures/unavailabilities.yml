@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: unavailabilities
+#
+#  id         :integer          not null, primary key
+#  pro_id     :integer
+#  date       :datetime
+#  week_day   :integer
+#  hours      :text             default([]), is an Array
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pro: one
+  date: 2017-09-12 16:27:18
+  week_day: 1
+  hours: 
+
+two:
+  pro: two
+  date: 2017-09-12 16:27:18
+  week_day: 1
+  hours: 

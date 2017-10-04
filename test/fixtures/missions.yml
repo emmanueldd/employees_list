@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: missions
+#
+#  id          :integer          not null, primary key
+#  parent_id   :integer
+#  pro_id      :integer
+#  name        :string
+#  description :text
+#  price       :decimal(8, 2)
+#  duration    :integer
+#  published   :boolean          default(FALSE)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parent_id: 1
+  pro: one
+  name: MyString
+  description: MyText
+  price: 1.5
+  duration: 1
+  published: false
+
+two:
+  parent_id: 1
+  pro: two
+  name: MyString
+  description: MyText
+  price: 1.5
+  duration: 1
+  published: false

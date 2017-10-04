@@ -1,0 +1,10 @@
+%h2 Sign up
+= simple_form_for(Pro.new, as: :pro, url: registration_path(:pro)) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :email, required: true, autofocus: true
+    = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+    = f.input :password_confirmation, required: true
+  .form-actions
+    = f.button :submit, "Sign up"
+= render "pros/shared/links", resource_name: devise_mapping_for('Pro').name, devise_mapping: devise_mapping_for('Pro'), resource_class: devise_mapping_for('Pro').to

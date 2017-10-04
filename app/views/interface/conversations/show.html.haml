@@ -1,0 +1,11 @@
+.container
+  - @messages.each do |message|
+    %u= message.sender.email
+    %br
+    = message.body
+    %hr
+  %hr
+  %hr
+  = simple_form_for(@message, url: interface_conversation_messages_path(@conversation), html: { class: 'form-horizontal' }) do |form|
+    = form.input :body
+    = form.button :submit

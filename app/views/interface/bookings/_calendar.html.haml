@@ -1,0 +1,11 @@
+- date = (locales[:date] + locales[:index].days).to_date
+.col-md-1.col-day{class: (date === DateTime.now ? 'current-day' : '')}
+  %h5= I18n.l(date, format: :short)
+  %ul.list-group
+    - @bookings.each do |b|
+      %li.list-group-item
+        %small
+          %span.label.label-info= I18n.l(b.start_time.to_time, format: :short)
+          %span.label.label-warning= b.status
+          %br
+          = b.mission.name
