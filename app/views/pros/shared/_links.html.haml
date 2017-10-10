@@ -13,4 +13,4 @@
 - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
   = link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)
   %br/
-= link_to "Sign In with Google", pro_google_oauth2_omniauth_authorize_path(:google_oauth2)
+= link_to "Sign In with Google", pro_google_oauth2_omniauth_authorize_path
