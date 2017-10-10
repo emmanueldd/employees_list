@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :pros, controllers: {
     sessions: 'pros/sessions',
-    registrations: 'pros/registrations'
+    registrations: 'pros/registrations',
+    omniauth_callbacks: "pros/callbacks"
   }
   resources :home, only: [:index]
   resources :pros, only: [:index, :show]
@@ -20,6 +21,13 @@ Rails.application.routes.draw do
       resources :messages
     end
   end
-
+  namespace :api do
+    scope :v1 do
+      mount_devise_token_auth_for 'Pro', at: 'pro_auth'
+      as :pro do
+        resources :pros
+      end
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

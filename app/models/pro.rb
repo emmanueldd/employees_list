@@ -21,11 +21,15 @@
 #
 
 class Pro < ApplicationRecord
+
   mount_uploader :avatar, AvatarUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  include DeviseTokenAuth::Concerns::User
+  devise :validatable, :omniauthable
+  include Concerns::Oauth
 
   has_many :business_hours
   has_many :unavailabilities
@@ -44,6 +48,10 @@ class Pro < ApplicationRecord
     (0..6).each do |index|
       business_hours.create(week_day: index)
     end
+  end
+
+  def self.find_for_google_oauth2(auth)
+    super
   end
 
 

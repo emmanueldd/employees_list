@@ -35,6 +35,15 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 # https://github.com/plataformatec/devise
+
+gem 'devise_token_auth'
+
+gem 'omniauth-facebook'
+
+gem 'omniauth-google-oauth2'
+
+gem 'google-api-client', '0.8.2', require: 'google/api_client'
+
 gem "haml-rails", "~> 1.0"
 
 gem 'bootstrap-sass'
@@ -50,6 +59,8 @@ gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
 
 gem "font-awesome-rails"
+
+gem "figaro"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
