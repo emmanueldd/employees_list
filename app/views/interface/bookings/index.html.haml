@@ -1,6 +1,10 @@
 .container
   Sur mobile, ce calendrier est à la journée comme sur booksy (FS Calendar)
   %br
+  - if current_pro.calendar_id.nil?
+    = link_to 'Connecter mon compte à mon google agenda', '#', id: 'connect_to_google_agenda', "data-target": "#modalSelectCalendar", "data-toggle": "modal"
+  %br
+  %br
   .btn-group{"aria-label": "...", :role => "group"}
     .btn-group{:role => "group"}
       %button.btn.btn-default.dropdown-toggle{"aria-expanded": "false", "aria-haspopup": "true", "data-toggle": "dropdown", :type => "button"}
@@ -20,6 +24,7 @@
     - date = DateTime.now().beginning_of_month
     - (0..31).each do |index|
       = render 'calendar', locales: { index: index, date: date }
+      
 
   / Modal
   #modalAddBooking.modal.fade{"aria-labelledby": "myModalLabel", :role => "dialog", :tabindex => "-1"}
@@ -34,6 +39,7 @@
             = simple_form_for([:interface, @booking], html: { class: 'form-horizontal' }) do |form|
               = form.association :mission, collection: current_pro.missions
               = form.input :start_time
+              = form.input :pro_id, as: :hidden, input_html: { value: current_pro.id }
               = form.button :submit
         .modal-footer
           %button.btn.btn-default{"data-dismiss": "modal", :type => "button"} Close
@@ -83,6 +89,22 @@
               = form.input :date, as: :string, input_html: { class: 'datepicker' }
               = form.input :start_time, as: :time, minute_step: 15
               = form.input :end_time, as: :time, minute_step: 15
+              = form.button :submit
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss": "modal", :type => "button"} Close
+          %button.btn.btn-primary{:type => "button"} Save changes
+  / Modal
+  #modalSelectCalendar.modal.fade{"aria-labelledby": "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label": "Close", "data-dismiss": "modal", :type => "button"}
+            %span{"aria-hidden": "true"} ×
+          %h4#myModalLabel.modal-title Select calendar
+        .modal-body
+          .container-fluid
+            = simple_form_for([:interface, current_pro], html: { class: 'form-horizontal' }) do |form|
+              #calendar-list
               = form.button :submit
         .modal-footer
           %button.btn.btn-default{"data-dismiss": "modal", :type => "button"} Close

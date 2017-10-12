@@ -16,11 +16,19 @@
 
 class Booking < ApplicationRecord
   belongs_to :pro
-  belongs_to :mission
+  belongs_to :mission, optional: true
 
   before_save :set_end_time
-
+  
   def set_end_time
-    self.end_time = start_time + mission.duration.minutes
+    self.end_time = mission.present? ? start_time + mission.duration.minutes : start_time + 1.hour
+  end
+
+  def title
+    mission.present? ? mission.name : 'untitled'
+  end
+
+  def address
+    'temporary'
   end
 end

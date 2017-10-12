@@ -6,7 +6,7 @@ module Interface
 
     private
       def pro_params
-        params.require(:pro).permit(business_hours_attributes: [:start_time, :end_time, :date, :open, :closed, :id])
+        params.require(:pro).permit(:calendar_id, business_hours_attributes: [:start_time, :end_time, :date, :open, :closed, :id])
       end
   end
 end

@@ -54,6 +54,8 @@ gem 'jquery-rails'
 
 gem 'jquery-ui-rails'
 
+gem 'lodash-rails'
+
 gem 'simple_form'
 
 gem 'carrierwave', '~> 1.0'

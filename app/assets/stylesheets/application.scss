@@ -46,6 +46,14 @@
   }
 }
 
+.navbar-default {
+  background-color: #fff;
+  border-color: #fff;
+  .navbar-nav > li > a {
+    color: #000;
+  }
+}
+
 .avatar {
   width: 250px;
 }

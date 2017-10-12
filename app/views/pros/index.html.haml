@@ -1,24 +1,27 @@
-- @pros.each do |pro|
-  .col-md-4
-    = link_to pro do
-      .card
-        = image_tag pro.avatar, class: 'card-img-top'
-        .card-block
-          %figure.profile
-            %img.profile-avatar{:alt => "", :src => "http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif"}/
-          %h4.card-title.mt-3 Maxime barber
-          .meta
-            %a Paris
-            %br
-            %span.fa.fa-star
-          .card-text
-            12:15 | 12:30 | 12:45 | 13:00
+.container
+  .row
+    - @pros.each do |pro|
+      .col-md-4
+        = link_to pro do
+          .card
+            = image_tag pro.avatar, class: 'card-img-top'
+            .card-block
+              %figure.profile
+                %img.profile-avatar{:alt => "", :src => "http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif"}/
+              %h4.card-title.mt-3 Maxime barber
+              .meta
+                %a Paris
+                %br
+                %span.fa.fa-star
+              .card-text
+                12:15 | 12:30 | 12:45 | 13:00
+%br
 
-    -#
-    -#   .card-footer
-    -#     %small Online 3 mins ago
-    -#     %button.btn.btn-secondary.float-right.btn-sm show
-    -# -# = link_to pro do
-    -# -#   = image_tag pro.avatar, class: 'avatar'
-    -# -#   %br
-    -# -#   = business_hours_for(pro, @wday)
+-#
+-#   .card-footer
+-#     %small Online 3 mins ago
+-#     %button.btn.btn-secondary.float-right.btn-sm show
+-# -# = link_to pro do
+-# -#   = image_tag pro.avatar, class: 'avatar'
+-# -#   %br
+-# -#   = business_hours_for(pro, @wday)
