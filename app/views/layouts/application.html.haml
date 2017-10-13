@@ -10,7 +10,7 @@
 
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
   %body{"data-namespace": content_for(:namespace) || namespace, "data-action": content_for(:action_name) || action_name, "data-controller": content_for(:controller_name) || controller_name}
-    = render "interface/navbar"
+    = render "layouts/navbar"
     #wrapper
       -# %div{class: ('container' unless controller_name == 'home' )}
       = yield

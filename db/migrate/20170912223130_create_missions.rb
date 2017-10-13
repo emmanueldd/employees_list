@@ -6,7 +6,7 @@ class CreateMissions < ActiveRecord::Migration[5.1]
       t.string :name
       t.text :description
       t.decimal :price, precision: 8, scale: 2
-      t.integer :duration
+      t.integer :duration, default: 60
       t.boolean :published, default: false
 
       t.timestamps

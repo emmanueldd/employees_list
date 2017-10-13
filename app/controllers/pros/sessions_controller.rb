@@ -18,7 +18,7 @@ class Pros::SessionsController < Devise::SessionsController
 
   protected
    def after_sign_in_path_for(resource)
-     interface_dashboard_index_path
+     dashboard_home_index_path
    end
 
   # If you have extra params to permit, append them to the sanitizer.

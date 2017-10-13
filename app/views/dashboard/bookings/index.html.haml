@@ -1,0 +1,111 @@
+.container
+  Sur mobile, ce calendrier est à la journée comme sur booksy (FS Calendar)
+  %br
+  - if current_pro.calendar_id.nil?
+    = link_to 'Connecter mon compte à mon google agenda', '#', id: 'connect_to_google_agenda', "data-target": "#modalSelectCalendar", "data-toggle": "modal"
+  %br
+  %br
+  .btn-group{"aria-label": "...", :role => "group"}
+    .btn-group{:role => "group"}
+      %button.btn.btn-default.dropdown-toggle{"aria-expanded": "false", "aria-haspopup": "true", "data-toggle": "dropdown", :type => "button"}
+        Menu
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          %a{"data-target": "#modalAvailability", "data-toggle": "modal"}
+            Availability
+        %li
+          %a{"data-target": "#modalUnavailability", "data-toggle": "modal"}
+            Unavailability
+        %li
+          %a{"data-target": "#modalAddBooking", "data-toggle": "modal"}
+            New booking
+  .row.seven-cols
+    - date = DateTime.now().beginning_of_month
+    - (0..31).each do |index|
+      = render 'calendar', locales: { index: index, date: date }
+      
+
+  / Modal
+  #modalAddBooking.modal.fade{"aria-labelledby": "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label": "Close", "data-dismiss": "modal", :type => "button"}
+            %span{"aria-hidden": "true"} ×
+          %h4#myModalLabel.modal-title New booking
+        .modal-body
+          .container-fluid
+            = simple_form_for([:dashboard, @booking], html: { class: 'form-horizontal' }) do |form|
+              = form.association :mission, collection: current_pro.missions
+              = form.input :start_time
+              = form.input :pro_id, as: :hidden, input_html: { value: current_pro.id }
+              = form.button :submit
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss": "modal", :type => "button"} Close
+          %button.btn.btn-primary{:type => "button"} Save changes
+
+  / Modal
+  #modalAvailability.modal.fade{"aria-labelledby": "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label": "Close", "data-dismiss": "modal", :type => "button"}
+            %span{"aria-hidden": "true"} ×
+          %h4#myModalLabel.modal-title Availability
+        .modal-body
+          .container-fluid
+            .row.seven-cols
+              = simple_form_for([:dashboard, current_pro], html: { class: 'form-horizontal' }) do |form|
+                - (1..6).each do |index|
+                  = form.simple_fields_for :business_hours, current_pro.business_hours[index] do |bh_form|
+                    .col-md-1
+                      = Date::DAYNAMES[index]
+                      %hr
+                      = render 'business_hours_inputs', locales: {form: bh_form, index: index}
+                .col-md-1
+                  = Date::DAYNAMES[0]
+                  %hr
+                  = form.simple_fields_for :business_hours, current_pro.business_hours[0] do |bh_form|
+                    = render 'business_hours_inputs', locales: {form: bh_form, index: 0}
+                = form.button :submit
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss": "modal", :type => "button"} Close
+          %button.btn.btn-primary{:type => "button"} Save changes
+
+  / Modal
+  #modalUnavailability.modal.fade{"aria-labelledby": "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label": "Close", "data-dismiss": "modal", :type => "button"}
+            %span{"aria-hidden": "true"} ×
+          %h4#myModalLabel.modal-title Unavailability
+        .modal-body
+          .container-fluid
+            = simple_form_for([:dashboard, @business_hour], html: { class: 'form-horizontal' }) do |form|
+              = form.input :open, as: :hidden, input_html: { value: false }
+              .datepicker
+              = form.input :date, as: :string, input_html: { class: 'datepicker' }
+              = form.input :start_time, as: :time, minute_step: 15
+              = form.input :end_time, as: :time, minute_step: 15
+              = form.button :submit
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss": "modal", :type => "button"} Close
+          %button.btn.btn-primary{:type => "button"} Save changes
+  / Modal
+  #modalSelectCalendar.modal.fade{"aria-labelledby": "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label": "Close", "data-dismiss": "modal", :type => "button"}
+            %span{"aria-hidden": "true"} ×
+          %h4#myModalLabel.modal-title Select calendar
+        .modal-body
+          .container-fluid
+            = simple_form_for([:dashboard, current_pro], html: { class: 'form-horizontal' }) do |form|
+              #calendar-list
+              = form.button :submit
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss": "modal", :type => "button"} Close
+          %button.btn.btn-primary{:type => "button"} Save changes

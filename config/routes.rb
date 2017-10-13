@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   }
   resources :home, only: [:index]
   resources :pros, only: [:index, :show]
-  namespace :interface do
-    get 'dashboard/index'
+
+  namespace :dashboard do
+    get 'home/index'
     get 'bookings/select_calendar'
     resources :pros do
       resources :availabilities, only: [:index]
@@ -26,6 +27,15 @@ Rails.application.routes.draw do
       resources :messages
     end
   end
+
+  namespace :interface do
+    get 'home/index'
+    resources :bookings
+    resources :conversations do
+      resources :messages
+    end
+  end
+
   namespace :api do
     scope :v1 do
       mount_devise_token_auth_for 'Pro', at: 'pro_auth'

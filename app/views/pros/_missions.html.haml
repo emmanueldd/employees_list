@@ -1,0 +1,50 @@
+-# %h3.listing-desc-headline.margin-top-70.margin-bottom-30 Pricing
+.show-more
+  .pricing-list-container
+    / Food List
+    - @parent_missions.each do |parent_mission|
+      %h4= parent_mission.name
+      %ul
+        - parent_mission.missions.each do |mission|
+          %li
+            = link_to interface_conversations_path(mission_id: mission), method: :post do
+              %h5= mission.name
+              %p= mission.description
+              %span= number_to_currency(mission.price)
+
+    -#
+    -# %h4 Burgers
+    -# %ul
+    -#   %li
+    -#     %h5 Classic Burger
+    -#     %p Beef, salad, mayonnaise, spicey relish, cheese
+    -#     %span $6
+    -#   %li
+    -#     %h5 Cheddar Burger
+    -#     %p Cheddar cheese, lettuce, tomato, onion, dill pickles
+    -#     %span $6
+    -#   %li
+    -#     %h5 Veggie Burger
+    -#     %p Panko crumbed and fried, grilled peppers and mushroom
+    -#     %span $6
+    -#   %li
+    -#     %h5 Chicken Burger
+    -#     %p Cheese, chicken fillet, avocado, bacon, tomatoes, basil
+    -#     %span $6
+    -# / Food List
+    -# %h4 Drinks
+    -# %ul
+    -#   %li
+    -#     %h5 Frozen Shake
+    -#     %span $4
+    -#   %li
+    -#     %h5 Orange Juice
+    -#     %span $4
+    -#   %li
+    -#     %h5 Beer
+    -#     %span $4
+    -#   %li
+    -#     %h5 Water
+    -#     %span Free
+%a.show-more-button{"data-less-title" => "Show Less", "data-more-title" => "Show More", :href => "#"}
+  %i.fa.fa-angle-down

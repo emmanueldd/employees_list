@@ -1,6 +1,6 @@
 .container
   - @conversations.each do |conversation|
     = link_to [:interface, conversation] do
-      = conversation.sender.email
+      = last_message(conversation)
       %hr
       = conversation.message

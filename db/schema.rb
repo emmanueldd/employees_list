@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171012062333) do
+ActiveRecord::Schema.define(version: 20171013145123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "street"
+    t.string "street2"
+    t.string "city"
+    t.string "state"
+    t.string "zip_code"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "object_type"
+    t.bigint "object_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["object_type", "object_id"], name: "index_addresses_on_object_type_and_object_id"
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "pro_id"
@@ -22,12 +37,13 @@ ActiveRecord::Schema.define(version: 20171012062333) do
     t.decimal "price", precision: 8, scale: 2
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string "status", default: "pending"
+    t.string "status", default: "draft"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "google_event_id"
-    t.string "address"
+    t.bigint "address_id"
+    t.index ["address_id"], name: "index_bookings_on_address_id"
     t.index ["mission_id"], name: "index_bookings_on_mission_id"
     t.index ["pro_id"], name: "index_bookings_on_pro_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -47,14 +63,10 @@ ActiveRecord::Schema.define(version: 20171012062333) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.string "sender_type"
-    t.bigint "sender_id"
-    t.string "recipient_type"
-    t.bigint "recipient_id"
+    t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recipient_type", "recipient_id"], name: "index_conversations_on_recipient_type_and_recipient_id"
-    t.index ["sender_type", "sender_id"], name: "index_conversations_on_sender_type_and_sender_id"
+    t.index ["booking_id"], name: "index_conversations_on_booking_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -75,11 +87,21 @@ ActiveRecord::Schema.define(version: 20171012062333) do
     t.string "name"
     t.text "description"
     t.decimal "price", precision: 8, scale: 2
-    t.integer "duration"
+    t.integer "duration", default: 60
     t.boolean "published", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["pro_id"], name: "index_missions_on_pro_id"
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.string "person_type"
+    t.bigint "person_id"
+    t.bigint "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_participants_on_conversation_id"
+    t.index ["person_type", "person_id"], name: "index_participants_on_person_type_and_person_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -164,11 +186,13 @@ ActiveRecord::Schema.define(version: 20171012062333) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "addresses"
   add_foreign_key "bookings", "missions"
   add_foreign_key "bookings", "pros"
   add_foreign_key "bookings", "users"
   add_foreign_key "business_hours", "pros"
   add_foreign_key "messages", "conversations"
   add_foreign_key "missions", "pros"
+  add_foreign_key "participants", "conversations"
   add_foreign_key "unavailabilities", "pros"
 end

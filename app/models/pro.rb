@@ -37,8 +37,10 @@ class Pro < ApplicationRecord
   has_many :bookings
   has_many :photos, as: :object
   has_many :messages, as: :sender
-  has_many :conversations, as: :sender
-  has_many :conversations, as: :recipient
+  # has_many :conversations, as: :sender
+  # has_many :conversations, as: :recipient
+  has_many :participants, as: :person, dependent: :destroy
+  has_many :conversations, through: :participants
 
   accepts_nested_attributes_for :business_hours
 

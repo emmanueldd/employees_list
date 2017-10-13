@@ -1,0 +1,12 @@
+.container
+  = link_to 'New photo', new_dashboard_photo_path, class: 'btn btn-default'
+
+  %br
+  %br
+  - @photos.each do |photo|
+    .col-md-4
+      = image_tag photo.photo, style: 'max-height: 150px;'
+      %br
+      %h5= photo.name
+      %br
+      = photo.description

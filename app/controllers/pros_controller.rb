@@ -8,9 +8,11 @@ class ProsController < ApplicationController
       @wday = params[:date].to_date.wday
       @pros = Pro.joins(:business_hours).where(business_hours: {week_day: @wday, open: true})
     end
+
   end
 
   def show
+    @parent_missions = @pro.missions.where(parent: nil).order(parent_id: :asc)
   end
 
   private

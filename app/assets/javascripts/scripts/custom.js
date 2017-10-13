@@ -2,7 +2,8 @@
 (function($){
 "use strict";
 
-$(document).ready(function(){
+// $(document).ready(function(){
+$( document ).on('turbolinks:load', function() {
 
 	/*--------------------------------------------------*/
 	/*  Navigation
@@ -55,7 +56,7 @@ $(document).ready(function(){
 
 
 	/*----------------------------------------------------*/
-	/*  Sticky Header 
+	/*  Sticky Header
 	/*----------------------------------------------------*/
 	$( "#header" ).not( "#header.not-sticky" ).clone(true).addClass('cloned unsticky').insertAfter( "#header" );
 	$( "#navigation.style-2" ).clone(true).addClass('cloned unsticky').insertAfter( "#navigation.style-2" );
@@ -130,7 +131,7 @@ $(document).ready(function(){
 			var attrImage = $(this).attr('data-background');
 			var attrColor = $(this).attr('data-color');
 			var attrOpacity = $(this).attr('data-color-opacity');
-			
+
 	        if(attrImage !== undefined) {
 	            $(this).css('background-image', 'url('+attrImage+')');
 	        }
@@ -151,7 +152,7 @@ $(document).ready(function(){
 
 
     /*----------------------------------------------------*/
-    /*  Image Box 
+    /*  Image Box
     /*----------------------------------------------------*/
 	$('.category-box').each(function(){
 
@@ -169,7 +170,7 @@ $(document).ready(function(){
 
 
     /*----------------------------------------------------*/
-    /*  Image Box 
+    /*  Image Box
     /*----------------------------------------------------*/
 	$('.img-box').each(function(){
 		$(this).append('<div class="img-box-background"></div>');
@@ -295,14 +296,14 @@ $(document).ready(function(){
 	// Jumping background fix for IE
 	if(navigator.userAgent.match(/Trident\/7\./)) { // if IE
 	    $('body').on("mousewheel", function () {
-	        event.preventDefault(); 
+	        event.preventDefault();
 
 	        var wheelDelta = event.wheelDelta;
 	        var currentScrollPosition = window.pageYOffset;
 	        window.scrollTo(0, currentScrollPosition - wheelDelta);
 	    });
 	}
-	
+
 
     /*----------------------------------------------------*/
     /*  Chosen Plugin
@@ -449,7 +450,7 @@ $(document).ready(function(){
 	 $('.listing-slider').slick({
 		centerMode: true,
 		centerPadding: '20%',
-		slidesToShow: 2, 
+		slidesToShow: 2,
 		responsive: [
 			{
 			  breakpoint: 1367,
@@ -562,7 +563,7 @@ $(document).ready(function(){
 
 	/*----------------------------------------------------*/
 	/*  Tabs
-	/*----------------------------------------------------*/ 
+	/*----------------------------------------------------*/
 
 	var $tabsNav    = $('.tabs-nav'),
 	$tabsNavLis = $tabsNav.children('li');
@@ -691,7 +692,7 @@ $(document).ready(function(){
 	$(window).on('load resize', function() {
 		var winWidth = $(window).width();
 		var headerHeight = $("#header-container").height(); // height on which the sticky header will shows
-		
+
 		$('.fs-inner-container, .fs-inner-container.map-fixed, #dashboard').css('padding-top', headerHeight);
 
 		if(winWidth<992) {
@@ -718,7 +719,7 @@ $(document).ready(function(){
     /*  Rating Script Init
     /*----------------------------------------------------*/
 
-	// Leave Rating 
+	// Leave Rating
 	$('.leave-rating input').change(function () {
 		var $radio = $(this);
 		$('.leave-rating .selected').removeClass('selected');
@@ -764,7 +765,7 @@ $(document).ready(function(){
 
 		if(switcherInput.is(':checked')){
 			$(switcherSection).addClass('switcher-on');
-		} 
+		}
 
 		switcherInput.change(function(){
 			if(this.checked===true){
@@ -796,7 +797,7 @@ $(document).ready(function(){
 	$(window).on('load resize', function() {
 		var msgContentHeight = $(".message-content").outerHeight();
 		var msgInboxHeight = $(".messages-inbox ul").height();
-		
+
 		if( msgContentHeight > msgInboxHeight ){
 			$(".messages-container-inner .messages-inbox ul").css('max-height', msgContentHeight)
 		}
@@ -882,9 +883,9 @@ $(document).ready(function(){
 		$('.panel-dropdown').removeClass("active");
 		$('.fs-inner-container.content').removeClass("faded-out");
     }
- 
+
     $('.panel-dropdown a').on('click', function(e) {
-    	
+
 		if ( $(this).parent().is(".active") ) {
             close_panel_dropdown();
         } else {
@@ -892,9 +893,9 @@ $(document).ready(function(){
             $(this).parent().addClass('active');
 			$('.fs-inner-container.content').addClass("faded-out");
         }
- 
+
         e.preventDefault();
-    }); 
+    });
 
     // Apply / Close buttons
     $('.panel-buttons button').on('click', function(e) {
@@ -905,13 +906,13 @@ $(document).ready(function(){
     // Closes dropdown on click outside the conatainer
 	var mouse_is_inside = false;
 
-	$('.panel-dropdown').hover(function(){ 
-	    mouse_is_inside=true; 
-	}, function(){ 
-	    mouse_is_inside=false; 
+	$('.panel-dropdown').hover(function(){
+	    mouse_is_inside=true;
+	}, function(){
+	    mouse_is_inside=false;
 	});
 
-	$("body").mouseup(function(){ 
+	$("body").mouseup(function(){
 	    if(! mouse_is_inside) close_panel_dropdown();
 	});
 
@@ -989,12 +990,12 @@ $(document).ready(function(){
     // Smooth scrolling using scrollto.js
 	$('.listing-nav a, a.listing-address, .star-rating a').on('click', function(e) {
         e.preventDefault();
-        $('html,body').scrollTo(this.hash, this.hash, { gap: {y: -20} }); 
+        $('html,body').scrollTo(this.hash, this.hash, { gap: {y: -20} });
     });
 
 	$(".listing-nav li:first-child a, a.add-review-btn, a[href='#add-review']").on('click', function(e) {
         e.preventDefault();
-        $('html,body').scrollTo(this.hash, this.hash, { gap: {y: -100} }); 
+        $('html,body').scrollTo(this.hash, this.hash, { gap: {y: -100} });
     });
 
 
@@ -1002,14 +1003,14 @@ $(document).ready(function(){
 	$(window).on('load resize', function() {
 		var aChildren = $(".listing-nav li").children();
 		var aArray = [];
-		for (var i=0; i < aChildren.length; i++) {    
+		for (var i=0; i < aChildren.length; i++) {
 		    var aChild = aChildren[i];
 		    var ahref = $(aChild).attr('href');
 		    aArray.push(ahref);
 		}
 
 		$(window).scroll(function(){
-		    var windowPos = $(window).scrollTop(); 
+		    var windowPos = $(window).scrollTop();
 		    for (var i=0; i < aArray.length; i++) {
 		        var theID = aArray[i];
 		        var divPos = $(theID).offset().top - 150;
@@ -1277,5 +1278,3 @@ function starRating(ratingElem) {
 	});
 
 } starRating('.star-rating');
-
-

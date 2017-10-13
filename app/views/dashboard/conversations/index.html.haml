@@ -1,0 +1,6 @@
+.container
+  - @conversations.each do |conversation|
+    = link_to [:dashboard, conversation] do
+      = conversation.last_message.sender.email
+      %hr
+      = conversation.message

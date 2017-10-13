@@ -17,7 +17,11 @@
 class Mission < ApplicationRecord
   belongs_to :pro, optional: true
   belongs_to :parent, class_name: 'Mission', foreign_key: 'parent_id', optional: true
-  has_many :missions
+  has_many :childrens, class_name: 'Mission'
 
   scope :parent_missions, -> { where(parent_id: nil) }
+
+  def missions
+    Mission.where(parent: self)
+  end
 end

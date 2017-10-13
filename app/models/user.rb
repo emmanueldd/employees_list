@@ -31,6 +31,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :photos, as: :object
   has_many :messages, as: :sender
-  has_many :conversations, as: :sender
-  has_many :conversations, as: :recipient
+  has_many :addresses, as: :object
+  has_many :bookings
+  # has_and_belongs_to_many :conversations, as: :sender
+  # has_and_belongs_to_many :conversations, as: :recipient
+  # has_many :conversations, :class_name => "Message", :foreign_key  => "sender_id"
+  # has_many :conversations, :class_name => "Message", :foreign_key  => "recipient_id"
+  has_many :participants, as: :person, dependent: :destroy
+  has_many :conversations, through: :participants
 end

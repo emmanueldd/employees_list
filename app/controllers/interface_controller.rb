@@ -1,3 +1,3 @@
 class InterfaceController < ApplicationController
-	before_action :authenticate_pro!
+	before_action :authenticate_user!
 end

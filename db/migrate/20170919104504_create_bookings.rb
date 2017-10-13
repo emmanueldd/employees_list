@@ -7,7 +7,7 @@ class CreateBookings < ActiveRecord::Migration[5.1]
       t.decimal :price, precision: 8, scale: 2
       t.datetime :start_time
       t.datetime :end_time
-      t.string :status, default: 'pending'
+      t.string :status, default: 'draft' # draft, pending (ou pending_pro, pending_user), confirmed, refused, canceled, done (, disputed)
       t.text :comment
 
       t.timestamps

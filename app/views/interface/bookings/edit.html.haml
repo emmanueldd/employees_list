@@ -1,0 +1,9 @@
+.container
+  = simple_form_for([:interface, @booking], html: { class: 'form-horizontal' }) do |form|
+    = form.association :mission, collection: @pro.missions
+    = form.input :address_id, collection: current_user.addresses
+    = link_to 'Add an address', '#'
+    (Modal, qui enregistre la réservation à son ouverture, dont le formulaire d'ajout d'adresse redirige sur cette page)
+    = form.input :start_time
+    = form.input :status, as: :hidden, input_html: { value: 'pending' }
+    = form.button :submit

@@ -1,4 +1,6 @@
 .container
+  = link_to 'Réserver', edit_interface_booking_path(@booking)
+
   - @messages.each do |message|
     %u= message.sender.email
     %br

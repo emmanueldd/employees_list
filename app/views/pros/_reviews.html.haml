@@ -1,0 +1,126 @@
+%section.comments.listing-reviews
+  %ul
+    %li
+      .avatar
+        %img{:alt => "", :src => "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=70"}/
+      .comment-content
+        .arrow-comment
+        .comment-by
+          Kathy Brown
+          %span.date June 2017
+          .star-rating{"data-rating" => "5"}
+        %p Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus
+        .review-images.mfp-gallery-container
+          %a.mfp-gallery{:href => "images/review-image-01.jpg"}
+            %img{:alt => "", :src => "images/review-image-01.jpg"}/
+          %a.rate-review{:href => "#"}
+            %i.sl.sl-icon-like
+            Helpful Review
+            %span 12
+      %li
+        .avatar
+          %img{:alt => "", :src => "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=70"}/
+        .comment-content
+          .arrow-comment
+          .comment-by
+            John Doe
+            %span.date May 2017
+            .star-rating{"data-rating" => "4"}
+          %p Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.
+          %a.rate-review{:href => "#"}
+            %i.sl.sl-icon-like
+            Helpful Review
+            %span 2
+      %li
+        .avatar
+          %img{:alt => "", :src => "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=70"}/
+        .comment-content
+          .arrow-comment
+          .comment-by
+            Kathy Brown
+            %span.date June 2017
+            .star-rating{"data-rating" => "5"}
+          %p Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus
+          .review-images.mfp-gallery-container
+            %a.mfp-gallery{:href => "images/review-image-02.jpg"}
+              %img{:alt => "", :src => "images/review-image-02.jpg"}/
+              %a.mfp-gallery{:href => "images/review-image-03.jpg"}
+                %img{:alt => "", :src => "images/review-image-03.jpg"}/
+              %a.rate-review{:href => "#"}
+                %i.sl.sl-icon-like
+                Helpful Review
+                %span 4
+          %li
+            .avatar
+              %img{:alt => "", :src => "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&s=70"}/
+            .comment-content
+              .arrow-comment
+              .comment-by
+                John Doe
+                %span.date May 2017
+                .star-rating{"data-rating" => "5"}
+              %p Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.
+              %a.rate-review{:href => "#"}
+                %i.sl.sl-icon-like
+                Helpful Review
+          / Pagination
+          .clearfix
+          .row
+            .col-md-12
+              / Pagination
+              .pagination-container.margin-top-30
+                %nav.pagination
+                  %ul
+                    %li
+                      %a.current-page{:href => "#"} 1
+                    %li
+                      %a{:href => "#"} 2
+                    %li
+                      %a{:href => "#"}
+                        %i.sl.sl-icon-arrow-right
+          .clearfix
+          / Pagination / End
+          / Add Review Box
+          #add-review.add-review-box
+            / Add Review
+            %h3.listing-desc-headline.margin-bottom-20 Add Review
+            %span.leave-rating-title Your rating for this listing
+            / Rating / Upload Button
+            .row
+              .col-md-6
+                / Leave Rating
+                .clearfix
+                .leave-rating.margin-bottom-30
+                  %input#rating-1{:name => "rating", :type => "radio", :value => "1"}/
+                  %label.fa.fa-star{:for => "rating-1"}
+                  %input#rating-2{:name => "rating", :type => "radio", :value => "2"}/
+                  %label.fa.fa-star{:for => "rating-2"}
+                  %input#rating-3{:name => "rating", :type => "radio", :value => "3"}/
+                  %label.fa.fa-star{:for => "rating-3"}
+                  %input#rating-4{:name => "rating", :type => "radio", :value => "4"}/
+                  %label.fa.fa-star{:for => "rating-4"}
+                  %input#rating-5{:name => "rating", :type => "radio", :value => "5"}/
+                  %label.fa.fa-star{:for => "rating-5"}
+                .clearfix
+              .col-md-6
+                / Uplaod Photos
+                .add-review-photos.margin-bottom-30
+                  .photoUpload
+                    %span
+                      %i.sl.sl-icon-arrow-up-circle
+                      Upload Photos
+                    %input.upload{:type => "file"}/
+            / Review Comment
+            %form#add-comment.add-comment
+              %fieldset
+                .row
+                  .col-md-6
+                    %label Name:
+                    %input{:type => "text", :value => ""}/
+                  .col-md-6
+                    %label Email:
+                    %input{:type => "text", :value => ""}/
+                %div
+                  %label Review:
+                  %textarea{:cols => "40", :rows => "3"}
+              %button.button Submit Review

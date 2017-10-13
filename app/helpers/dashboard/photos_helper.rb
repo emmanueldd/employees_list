@@ -1,0 +1,2 @@
+module Dashboard::PhotosHelper
+end
