@@ -9,12 +9,23 @@
     .item.active
       = image_tag 'slides/slider-bg-02.jpg'
       .carousel-caption
-        %h3 Devenez indépendante
+        -# %h3 Devenez indépendante
+        %h3 Acteurs de la beauté, gagnez votre indépendance
         .caption-text{:style => "transition: none; line-height: 37px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-weight: 400; font-size: 22px;"}
-          Interactively procrastinate high-payoff content without backward-compatible data.
+          Nous croyons en l'indépendance des professionels la beauté.
           %br
-          Quickly cultivate optimal processes and tactical architectures.
-        %a.button.medium{:href => "#", :style => "transition: none; line-height: 26px; border-width: 0px; margin: 37px 6px 0px 0px; padding: 11px 26px; letter-spacing: 0px; font-weight: 600; font-size: 16px;"} Get Started
+          C'est pourquoi nous avons développé les outils nécessaires à la croissance de votre activité.
+          %br
+          %br
+          %form#contactform{:action => "contact.php", :autocomplete => "on", :method => "post", :name => "contactform"}
+            .row
+              .col-md-4.col-md-offset-3
+                %div
+                  %input#name{:name => "name", :placeholder => "Email", :required => "required", :type => "text"}/
+                  %span{:style => "opacity: 1; left: 366px; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
+              .col-md-2
+                %input#submit.submit.button{:type => "submit", :value => "Tester Owfleek"}/
+        -# %a.button.medium{:href => "#", :style => "transition: none; line-height: 26px; border-width: 0px; margin: 37px 6px 0px 0px; padding: 11px 26px; letter-spacing: 0px; font-weight: 600; font-size: 16px;"} Get Started
     -# .item
     -#   = image_tag 'slides/slider-bg-01.jpg'
     -#   .carousel-caption

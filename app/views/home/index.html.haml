@@ -5,50 +5,41 @@
 
 !!!
 
-%body
-  -# / Wrapper
-  #wrapper
-    = render 'slides'
-    .container
-      .row
-        .col-md-8.col-md-offset-2
-          %h2.headline.centered.margin-top-80
-            Pourquoi Owfleek ?
-            %span.margin-top-25 Ayez la liberté de faire ce que vous aimez
-      .row.icons-container
-        / Stage
-        .col-md-4
-          .icon-box-2.with-line
-            %i.im.im-icon-Map2
-            %h3 Find Interesting Place
-            %p Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.
-        / Stage
-        .col-md-4
-          .icon-box-2.with-line
-            %i.im.im-icon-Mail-withAtSign
-            %h3 Contact a Few Owners
-            %p Maecenas pulvinar, risus in facilisis dignissim, quam nisi hendrerit nulla, id vestibulum metus nullam viverra porta purus.
-        / Stage
-        .col-md-4
-          .icon-box-2
-            %i.im.im-icon-Checked-User
-            %h3 Make a Reservation
-            %p Faucibus ante, in porttitor tellus blandit et. Phasellus tincidunt metus lectus sollicitudin feugiat pharetra consectetur.
-    .parallax{"data-background" => "#{image_path('slides/slider-bg-01.jpg')}", "data-color" => "#36383e", "data-color-opacity" => "0.6", "data-img-height" => "505", "data-img-width" => "800", :style => "background-image: url(#{image_path('slides/slider-bg-01.jpg')}); background-attachment: fixed; background-size: 1621px 1023.26px; background-position: 50% -206.552px;"}
-      .parallax-overlay{:style => "background-color: rgb(54, 56, 62); opacity: 0.6;"}
-      / Infobox
-      .text-content.white-font
-        .container
-          .row
-            .col-lg-6.col-sm-8
-              %h2 Streamline Your Business
-              %p We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.
-              %a.button.margin-top-25{:href => "listings-list-with-sidebar.html"} Get Started
-      / Infobox / End
-    -# / Container / End
-    %section.fullwidth.margin-top-70.margin-bottom-65{"data-background-color" => "#fff", :style => "background: rgb(255, 255, 255);"}
+= render 'slides'
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      %h2.headline.centered.margin-top-80
+        Pourquoi Owfleek ?
+        %span.margin-top-25 Ayez la liberté de faire ce que vous aimez
+  .row.icons-container
+    / Stage
+    .col-md-4
+      .icon-box-2.with-line
+        %i.im.im-icon-Map2
+        %h3 Find Interesting Place
+        %p Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.
+    / Stage
+    .col-md-4
+      .icon-box-2.with-line
+        %i.im.im-icon-Mail-withAtSign
+        %h3 Contact a Few Owners
+        %p Maecenas pulvinar, risus in facilisis dignissim, quam nisi hendrerit nulla, id vestibulum metus nullam viverra porta purus.
+    / Stage
+    .col-md-4
+      .icon-box-2
+        %i.im.im-icon-Checked-User
+        %h3 Make a Reservation
+        %p Faucibus ante, in porttitor tellus blandit et. Phasellus tincidunt metus lectus sollicitudin feugiat pharetra consectetur.
+    .col-md-12
+      %br
+      %br
+      .center-align
+        = image_tag 'https://www.styleseat.com/bundles/assets/join_screenshot.eaea7d747811fe4a31ae61490cbfad8d.jpg', width: '100%'
   / Container / Start
+
   .container
+    %section.fullwidth.border-top.margin-bottom-40{"data-background-color" => "#ffffff", :style => "background: rgb(255, 255, 255);"}
     .row.margin-bottom-65
       .col-md-12
         %h3.headline.centered.margin-bottom-50
@@ -67,56 +58,115 @@
           %li Free parking on premises
           %li Free parking on street
 
-    .row
-      .col-md-12
-        %h3.headline.centered.margin-bottom-50
-          Get an Exposure For Your Listing
-    / Row / Start
-    .row
-      .col-md-12
-        .pricing-container.margin-top-30
-          / Plan #1
-          .plan
-            .plan-price
-              %h3 Basic
-              %span.value Free
-              %span.period Free of charge one standard listing active for 30 days
-            .plan-features
-              %ul
-                %li One Listing
-                %li 30 Days Availability
-                %li Standard Listing
-                %li Limited Support
-              %a.button.border{:href => "#"} Get Started
-          / Plan #3
-          .plan.featured
-            .listing-badge
-              %span.featured Featured
-            .plan-price
-              %h3 Extended
-              %span.value $9.99
-              %span.period One time fee for one listing, highlighted in the search results
-            .plan-features
-              %ul
-                %li One Time Fee
-                %li One Listing
-                %li 90 Days Availability
-                %li Featured In Search Results
-                %li 24/7 Support
-              %a.button{:href => "#"} Get Started
-          / Plan #3
-          .plan
-            .plan-price
-              %h3 Professional
-              %span.value $19.99
-              %span.period Monthly subscription for unlimited listings and availability
-            .plan-features
-              %ul
-                %li Unlimited Listings
-                %li Unlimited Availability
-                %li Featured In Search Results
-                %li 24/7 Support
-              %a.button.border{:href => "#"} Get Started
+.parallax{"data-background" => "#{image_path('slides/slider-bg-01.jpg')}", "data-color" => "#36383e", "data-color-opacity" => "0.6", "data-img-height" => "505", "data-img-width" => "800", :style => "background-image: url(#{image_path('slides/slider-bg-01.jpg')}); background-attachment: fixed; background-size: 1621px 1023.26px; background-position: 50% -206.552px;"}
+  .parallax-overlay{:style => "background-color: rgb(54, 56, 62); opacity: 0.6;"}
+  / Infobox
+  .text-content.white-font
+    .container
+      .row
+        .col-lg-6.col-sm-8
+          %h2 Professionalisez votre activité
+
+
+          %form#contactform{:action => "contact.php", :autocomplete => "on", :method => "post", :name => "contactform"}
+            .row
+              .col-md-6
+                %div
+                  %input#name{:name => "name", :placeholder => "Your Name", :required => "required", :type => "text"}/
+                  %span{:style => "opacity: 1; left: 366px; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
+              .col-md-6
+                %div
+                  %input#email{:name => "email", :pattern => "^[A-Za-z0-9](([_\\.\\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\\.\\-]?[a-zA-Z0-9]+)*)\\.([A-Za-z]{2,})$", :placeholder => "Email Address", :required => "required", :type => "email"}/
+                  %span{:style => "opacity: 1; left: 366px; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
+            %div
+              %input#subject{:name => "subject", :placeholder => "Subject", :required => "required", :type => "text"}/
+              %span{:style => "opacity: 1; left: 770px; top: 157px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
+            %div
+              %textarea#comments{:cols => "40", :name => "comments", :placeholder => "Message", :required => "required", :rows => "3", :spellcheck => "true"}
+            -# %input#submit.button{:type => "submit", :value => "Submit Message"}/
+            %br
+            %input#submit.submit.button{:type => "submit", :value => "Tester Owfleek"}/
+
+
+            -# %a.button.margin-top-25{:href => "listings-list-with-sidebar.html"} Get Started
+  / Infobox / End
+
+/ Logo Carousel
+.container.margin-bottom-40
+  .row
+    .col-md-12
+      %h3.headline.centered.margin-bottom-40.margin-top-60
+        Companies We've Worked With
+        %span We can assist you with your innovation or commercialisation journey!
+    / Carousel
+    .col-md-12
+      .logo-slick-carousel.dot-navigation
+        .item
+          = image_tag "logo-01.png"
+        .item
+          = image_tag "logo-01.png"
+        .item
+          = image_tag "logo-01.png"
+        .item
+          = image_tag "logo-01.png"
+        .item
+          = image_tag "logo-01.png"
+        .item
+          = image_tag "logo-01.png"
+        .item
+          = image_tag "logo-01.png"
+
+
+    -# .row
+    -#   .col-md-12
+    -#     %h3.headline.centered.margin-bottom-50
+    -#       Get an Exposure For Your Listing
+    -# / Row / Start
+    -# .row
+    -#   .col-md-12
+    -#     .pricing-container.margin-top-30
+    -#       / Plan #1
+    -#       .plan
+    -#         .plan-price
+    -#           %h3 Basic
+    -#           %span.value Free
+    -#           %span.period Free of charge one standard listing active for 30 days
+    -#         .plan-features
+    -#           %ul
+    -#             %li One Listing
+    -#             %li 30 Days Availability
+    -#             %li Standard Listing
+    -#             %li Limited Support
+    -#           %a.button.border{:href => "#"} Get Started
+    -#       / Plan #3
+    -#       .plan.featured
+    -#         .listing-badge
+    -#           %span.featured Featured
+    -#         .plan-price
+    -#           %h3 Extended
+    -#           %span.value $9.99
+    -#           %span.period One time fee for one listing, highlighted in the search results
+    -#         .plan-features
+    -#           %ul
+    -#             %li One Time Fee
+    -#             %li One Listing
+    -#             %li 90 Days Availability
+    -#             %li Featured In Search Results
+    -#             %li 24/7 Support
+    -#           %a.button{:href => "#"} Get Started
+    -#       / Plan #3
+    -#       .plan
+    -#         .plan-price
+    -#           %h3 Professional
+    -#           %span.value $19.99
+    -#           %span.period Monthly subscription for unlimited listings and availability
+    -#         .plan-features
+    -#           %ul
+    -#             %li Unlimited Listings
+    -#             %li Unlimited Availability
+    -#             %li Featured In Search Results
+    -#             %li 24/7 Support
+    -#           %a.button.border{:href => "#"} Get Started
     / Row / End
   / Container / End
 
