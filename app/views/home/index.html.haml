@@ -38,27 +38,27 @@
         = image_tag 'https://www.styleseat.com/bundles/assets/join_screenshot.eaea7d747811fe4a31ae61490cbfad8d.jpg', width: '100%'
   / Container / Start
 
-  .container
-    %section.fullwidth.border-top.margin-bottom-40{"data-background-color" => "#ffffff", :style => "background: rgb(255, 255, 255);"}
-    .row.margin-bottom-65
-      .col-md-12
-        %h3.headline.centered.margin-bottom-50
-          A small investment to secure your dreams
-        %ul.listing-features.checkboxes.margin-top-0
-          %li Elevator in building
-          %li Friendly workspace
-          %li Instant Book
-          %li Wireless Internet
-          %li Free parking on premises
-          %li Free parking on street
-          %li Elevator in building
-          %li Friendly workspace
-          %li Instant Book
-          %li Wireless Internet
-          %li Free parking on premises
-          %li Free parking on street
+.container
+  %section.fullwidth.border-top.margin-bottom-40{"data-background-color" => "#ffffff", :style => "background: rgb(255, 255, 255);"}
+  .row.margin-bottom-65
+    .col-md-12
+      %h3.headline.centered.margin-bottom-50
+        A small investment to secure your dreams
+      %ul.listing-features.checkboxes.margin-top-0
+        %li Elevator in building
+        %li Friendly workspace
+        %li Instant Book
+        %li Wireless Internet
+        %li Free parking on premises
+        %li Free parking on street
+        %li Elevator in building
+        %li Friendly workspace
+        %li Instant Book
+        %li Wireless Internet
+        %li Free parking on premises
+        %li Free parking on street
 
-.parallax{"data-background" => "#{image_path('slides/slider-bg-02.jpg')}", "data-color" => "#36383e", "data-color-opacity" => "0.6", "data-img-height" => "505", "data-img-width" => "800", :style => "background-image: url(#{image_path('slides/slider-bg-02.jpg')}); background-attachment: fixed; background-size: 1621px 1023.26px; background-position: 50% -206.552px;"}
+.parallax{"data-background" => "#{image_path('slides/slider-bg-02.jpg')}", "data-color" => "#36383e", "data-color-opacity" => "0.6", "data-img-height" => "505", "data-img-width" => "800", :style => "background-image: url(#{image_path('slides/slider-bg-02.jpg')}); background-attachment: fixed;"}
   .parallax-overlay{:style => "background-color: rgb(54, 56, 62); opacity: 0.6;"}
   / Infobox
   .text-content.white-font
@@ -73,14 +73,14 @@
               .col-md-6
                 %div
                   %input#name{:name => "name", :placeholder => "Your Name", :required => "required", :type => "text"}/
-                  %span{:style => "opacity: 1; left: 366px; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
+                  %span{:style => "opacity: 1; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
               .col-md-6
                 %div
                   %input#email{:name => "email", :pattern => "^[A-Za-z0-9](([_\\.\\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\\.\\-]?[a-zA-Z0-9]+)*)\\.([A-Za-z]{2,})$", :placeholder => "Email Address", :required => "required", :type => "email"}/
-                  %span{:style => "opacity: 1; left: 366px; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
+                  %span{:style => "opacity: 1; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
             %div
               %input#subject{:name => "subject", :placeholder => "Subject", :required => "required", :type => "text"}/
-              %span{:style => "opacity: 1; left: 770px; top: 157px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
+              %span{:style => "opacity: 1; top: 157px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
             %div
               %textarea#comments{:cols => "40", :name => "comments", :placeholder => "Message", :required => "required", :rows => "3", :spellcheck => "true"}
             -# %input#submit.button{:type => "submit", :value => "Submit Message"}/
