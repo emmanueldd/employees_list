@@ -7,8 +7,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag '//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyD7AY7a4QvfcJZww3qnQseigQuoDwSUK2M', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-
-    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
   %body{"data-namespace": content_for(:namespace) || namespace, "data-action": content_for(:action_name) || action_name, "data-controller": content_for(:controller_name) || controller_name}
     = render "layouts/navbar"
     #wrapper
