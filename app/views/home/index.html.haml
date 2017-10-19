@@ -11,52 +11,79 @@
     .col-md-8.col-md-offset-2
       %h2.headline.centered.margin-top-80
         Pourquoi Owfleek ?
-        %span.margin-top-25 Ayez la liberté de faire ce que vous aimez
+        %span.margin-top-25 Rejoignez le mouvement
   .row.icons-container
     / Stage
-    .col-md-4
+    .col-md-3
       .icon-box-2.with-line
-        %i.im.im-icon-Map2
-        %h3 Find Interesting Place
-        %p Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.
+        %i 1
+        %h3 Devenez indépendant
+        %p
+          Nous vous accompagnons dans toutes les étapes vers votre indépendance. En rejoignant la commuanuté, vous bénéficierez de conseils pour vous déveloper vous, et votre activité.
+
     / Stage
-    .col-md-4
+    .col-md-3
       .icon-box-2.with-line
-        %i.im.im-icon-Mail-withAtSign
-        %h3 Contact a Few Owners
-        %p Maecenas pulvinar, risus in facilisis dignissim, quam nisi hendrerit nulla, id vestibulum metus nullam viverra porta purus.
+        %i 2
+        %h3 Gagnez en visiblité
+        %p
+          Bénéficiez d’un site professionel, pour mieux intéragir avec vos clients.
+          Partagez y vos prestations, vos horaires de travail ainsi que vos photos.
+
+
     / Stage
-    .col-md-4
-      .icon-box-2
-        %i.im.im-icon-Checked-User
-        %h3 Make a Reservation
-        %p Faucibus ante, in porttitor tellus blandit et. Phasellus tincidunt metus lectus sollicitudin feugiat pharetra consectetur.
+    .col-md-3
+      .icon-box-2.with-line
+        %i 3
+        %h3 Soyez organisé
+        %p
+          Organisez vos rendez-vous simplement :
+          Rappel par SMS, gestion de votre emploi du temps, et même la planification de votre trajet.
+
+    / Stage
+    .col-md-3
+      .icon-box-2.with-line
+        %i 4
+        %h3 Faites plus de réservations
+        %p
+          Partagez votre page sur vos réseaux sociaux, et facilitez la prise de rendez-vous pour vos clients. Créez des newsletter par SMS/email grâce à notre outil et développez votre activité.
+
+    / Stage
+    -# .col-md-3
+    -#   .icon-box-2
+    -#     %i 4
+    -#     %h3 Encaissez vos paiements
+    -#     %p
+    -#       Acceptez les paiements par CB, et obtenez les paiements le jour suivant sur votre compte bancaire. Configurez une politique d'annulation, et évitez les clients peu sérieux.
+
     .col-md-12
       %br
       %br
       .center-align
         = image_tag 'https://www.styleseat.com/bundles/assets/join_screenshot.eaea7d747811fe4a31ae61490cbfad8d.jpg', width: '100%'
+        %h3.headline.centered.margin-bottom-50.border-bottom
+          Offrez-vous votre indépendance
   / Container / Start
 
-.container
-  %section.fullwidth.border-top.margin-bottom-40{"data-background-color" => "#ffffff", :style => "background: rgb(255, 255, 255);"}
-  .row.margin-bottom-65
-    .col-md-12
-      %h3.headline.centered.margin-bottom-50
-        A small investment to secure your dreams
-      %ul.listing-features.checkboxes.margin-top-0
-        %li Elevator in building
-        %li Friendly workspace
-        %li Instant Book
-        %li Wireless Internet
-        %li Free parking on premises
-        %li Free parking on street
-        %li Elevator in building
-        %li Friendly workspace
-        %li Instant Book
-        %li Wireless Internet
-        %li Free parking on premises
-        %li Free parking on street
+-# .container
+-#   %section.fullwidth.border-top.margin-bottom-40{"data-background-color" => "#ffffff", :style => "background: rgb(255, 255, 255);"}
+-#   .row.margin-bottom-65
+-#     .col-md-12
+-#       %h3.headline.centered.margin-bottom-50
+-#         Donnez-vous les outils pour y arriver
+      -# %ul.listing-features.checkboxes.margin-top-0
+      -#   %li Elevator in building
+      -#   %li Friendly workspace
+      -#   %li Instant Book
+      -#   %li Wireless Internet
+      -#   %li Free parking on premises
+      -#   %li Free parking on street
+      -#   %li Elevator in building
+      -#   %li Friendly workspace
+      -#   %li Instant Book
+      -#   %li Wireless Internet
+      -#   %li Free parking on premises
+      -#   %li Free parking on street
 
 .parallax{"data-background" => "#{image_path('slides/slider-bg-02.jpg')}", "data-color" => "#36383e", "data-color-opacity" => "0.6", "data-img-height" => "505", "data-img-width" => "800", :style => "background-image: url(#{image_path('slides/slider-bg-02.jpg')}); background-attachment: fixed;"}
   .parallax-overlay{:style => "background-color: rgb(54, 56, 62); opacity: 0.6;"}
@@ -66,26 +93,16 @@
       .row
         .col-lg-6.col-sm-8
           %h2 Professionalisez votre activité
-
-
-          %form#contactform{:action => "contact.php", :autocomplete => "on", :method => "post", :name => "contactform"}
-            .row
-              .col-md-6
-                %div
-                  %input#name{:name => "name", :placeholder => "Your Name", :required => "required", :type => "text"}/
-                  %span{:style => "opacity: 1; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
-              .col-md-6
-                %div
-                  %input#email{:name => "email", :pattern => "^[A-Za-z0-9](([_\\.\\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\\.\\-]?[a-zA-Z0-9]+)*)\\.([A-Za-z]{2,})$", :placeholder => "Email Address", :required => "required", :type => "email"}/
-                  %span{:style => "opacity: 1; top: 19px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
+          %p
+            Que vous soyez coiffeuse, maquilleuse, esthéticienne, prothésiste ongulaire,.. Owfleek vous accompagne vers votre indépendance.
+          %br
+          = simple_form_for(@lead) do |f|
             %div
-              %input#subject{:name => "subject", :placeholder => "Subject", :required => "required", :type => "text"}/
-              %span{:style => "opacity: 1; top: 157px; width: 19px; min-width: 19px; height: 13px; position: absolute; border: none; display: inline; visibility: visible; z-index: auto;"}
-            %div
-              %textarea#comments{:cols => "40", :name => "comments", :placeholder => "Message", :required => "required", :rows => "3", :spellcheck => "true"}
-            -# %input#submit.button{:type => "submit", :value => "Submit Message"}/
-            %br
+              .form-inputs
+                = f.input :email, as: :email, required: true
+                = f.input :phone, as: :email, required: true
             %input#submit.submit.button{:type => "submit", :value => "Tester Owfleek"}/
+
 
 
             -# %a.button.margin-top-25{:href => "listings-list-with-sidebar.html"} Get Started
@@ -96,78 +113,18 @@
   .row
     .col-md-12
       %h3.headline.centered.margin-bottom-40.margin-top-60
-        Companies We've Worked With
-        %span We can assist you with your innovation or commercialisation journey!
+        Nos partenaires
+        %span La communauté Owfleek est soutenue par des partenaires de renom
     / Carousel
     .col-md-12
       .logo-slick-carousel.dot-navigation
         .item
-          = image_tag "logo-01.png"
+          = image_tag "partners/hec.png"
         .item
-          = image_tag "logo-01.png"
+          = image_tag "partners/cci.png"
         .item
-          = image_tag "logo-01.png"
+          = image_tag "partners/numa.png"
         .item
-          = image_tag "logo-01.png"
+          = image_tag "partners/frenchtech.png"
         .item
-          = image_tag "logo-01.png"
-        .item
-          = image_tag "logo-01.png"
-        .item
-          = image_tag "logo-01.png"
-
-
-    -# .row
-    -#   .col-md-12
-    -#     %h3.headline.centered.margin-bottom-50
-    -#       Get an Exposure For Your Listing
-    -# / Row / Start
-    -# .row
-    -#   .col-md-12
-    -#     .pricing-container.margin-top-30
-    -#       / Plan #1
-    -#       .plan
-    -#         .plan-price
-    -#           %h3 Basic
-    -#           %span.value Free
-    -#           %span.period Free of charge one standard listing active for 30 days
-    -#         .plan-features
-    -#           %ul
-    -#             %li One Listing
-    -#             %li 30 Days Availability
-    -#             %li Standard Listing
-    -#             %li Limited Support
-    -#           %a.button.border{:href => "#"} Get Started
-    -#       / Plan #3
-    -#       .plan.featured
-    -#         .listing-badge
-    -#           %span.featured Featured
-    -#         .plan-price
-    -#           %h3 Extended
-    -#           %span.value $9.99
-    -#           %span.period One time fee for one listing, highlighted in the search results
-    -#         .plan-features
-    -#           %ul
-    -#             %li One Time Fee
-    -#             %li One Listing
-    -#             %li 90 Days Availability
-    -#             %li Featured In Search Results
-    -#             %li 24/7 Support
-    -#           %a.button{:href => "#"} Get Started
-    -#       / Plan #3
-    -#       .plan
-    -#         .plan-price
-    -#           %h3 Professional
-    -#           %span.value $19.99
-    -#           %span.period Monthly subscription for unlimited listings and availability
-    -#         .plan-features
-    -#           %ul
-    -#             %li Unlimited Listings
-    -#             %li Unlimited Availability
-    -#             %li Featured In Search Results
-    -#             %li 24/7 Support
-    -#           %a.button.border{:href => "#"} Get Started
-    / Row / End
-  / Container / End
-
-  -# / Wrapper / End
+          = image_tag "partners/stationf.png"

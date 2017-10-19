@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     # omniauth_callbacks: "users/callbacks"
   }
   resources :home, only: [:index]
+  resources :leads
   resources :pros, only: [:index, :show]
 
   namespace :dashboard do

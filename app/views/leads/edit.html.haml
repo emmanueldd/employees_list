@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-md-12.col-sm-12
+      = simple_form_for(@lead) do |f|
+        %div
+          .form-inputs
+            = f.input :first_name, autofocus: true
+            = f.input :last_name
+            = f.input :email, as: :email, required: true
+            = f.input :phone, as: :tel
+            = f.input :instagram_url, as: :url
+        %input#submit.submit.button{:type => "submit", :value => "Tester Owfleek"}/

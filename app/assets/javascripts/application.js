@@ -16,5 +16,7 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require bootstrap-switch
+//= require jquery.validate
+//= require jquery.validate.localization/messages_fr
 //= require turbolinks
 //= require_tree .

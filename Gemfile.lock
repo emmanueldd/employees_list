@@ -136,6 +136,7 @@ GEM
       turbolinks
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    jquery-validation-rails (1.16.0)
     jwt (1.5.6)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -305,6 +306,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  jquery-validation-rails
   listen (>= 3.0.5, < 3.2)
   lodash-rails
   omniauth-facebook
