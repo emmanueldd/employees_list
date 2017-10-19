@@ -28,6 +28,7 @@ fr:
         facebook_url: 'https://www.facebook.com/macoiffeuseafro'
         instagram_url: '@ma_coiffeuse_afro'
         email: 'Votre Email'
+        phone: 'Votre N° de téléphone'
         password: 'Mot de passe'
         current_password: 'Mot de passe actuel'
         password_confirmation: 'Retapez votre mot de passe'
@@ -37,75 +38,8 @@ fr:
       booking:
         reason_for_refusal: 'Raison du refus'
     labels:
-      gifts:
-      mission_has_photo_examples:
-        mission_id: 'Prestation concernée'
-      booking:
-        coupon: 'Coupon de réduction'
-        start_time: 'Quel jour ?'
-        reason_for_refusal: 'Raison du refus'
-        end_time: "Jusqu'au"
-        from: "Commence à"
-        end_to: "Finit à"
-        entitled: 'Intitulé du rdv'
-        hour: 'À quelle heure ?'
-        start_time: 'Quel jour ?'
-        at_home: "Vous voulez que la prestation se déroule"
-        mission_id: 'Quelle prestation ?'
-      order:
-        gift: 'Cadeau Ma Coiffeuse Afro'
-      user:
-        man: 'Vous êtes un(e)'
-      invalidation_cause:
-        bad_photo: 'Mauvaises photos'
-        bad_title: 'Mauvais titre'
-        too_young: 'Trop jeune'
-        bad_location: 'Ville (pas dans Paris)'
-        bad_description: 'Mauvaise description'
-        bad_mission: 'Mauvaises prestations'
-        bad_hours: 'Mauvaises heures'
-        bad_move_to: 'Mauvais déplacements'
-        display_pub: 'Affiche de la pub'
-        at_home: 'Coiffe à domicile'
-        empty_listing: 'Fiche vide/incomplète'
-      mission:
-        promo: "Prix promotionnel"
-        price: "Votre prix"
-        title: "Nom de la prestation"
-      payment_information:
-        rib: 'Votre rib'
-        passport: "Passeport ou carte d\'identité"
-        social_security_number: 'Numéro de sécurité sociale'
-      listing_has_photo_examples:
-        photo: 'Exemple de réalisation'
-      booking_changes:
-        my_day: 'Le jour'
-        available_from: 'De'
-        available_to: 'À'
-
-      listing:
-        supplement_moving: "Supplément si déplacement"
-        description_no_salon: 'Déscription (Mettez en avant votre passion pour la coiffure)'
-        description: 'Décrivez-vous'
-        price: "Votre prix"
-        youtube_url: 'Vidéo youtube vous présentant (Facultatif)'
-        facebook_url: 'Page facebook (Facultatif)'
-        instagram_url: 'Compte instagram (Facultatif)'
-        man: 'Vous êtes un(e)'
-        type_of_listing: 'Vous êtes'
-        collaborative: 'Vous êtes un(e)'
-        salon: 'Vous êtes un salon'
-        title_salon: 'Nom de votre salon'
-        title_no_salon: 'Votre pseudo'
-        degree: "Diplôme (facultatif)"
-        siret_no_salon: "N° siret (facultatif)"
-        siret: "N° siret (facultatif)"
-        siret_question: "Etes-vous une entreprise/auto-entrepreneur ?"
-        description_salon: 'Décrivez vous/votre salon'
-        accessing: 'Accès (Transports, parking..)'
-        photo: 'Ajouter une photo de profil'
-        at_home: "Acceptez-vous de coiffer à votre domicile ?"
       defaults:
+        phone: "Téléphone"
         price: "Votre prix"
         supplement_half_long_hair: "Cheveux mi-longs"
         supplement_long_hair: "Cheveux longs"
@@ -130,7 +64,7 @@ fr:
         thursday: 'Jeudi'
         friday: 'Vendredi'
         saturday: 'Samedi'
-        sunday: 'dimanche'
+        sunday: 'Dimanche'
         address: 'Adresse (ex: 1 rue du coq, Créteil)'
         country: 'Pays'
         password: 'Mot de passe'
