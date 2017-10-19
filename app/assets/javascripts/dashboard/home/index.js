@@ -1,7 +1,7 @@
 'use strict';
 
-App.dashboard = App.dashboard || {};
-App.dashboard.index = {
+App.dashboard_home = App.dashboard_home || {};
+App.dashboard_home.index = {
 	init: function init() {
 		$(".datepicker").on("change",function(){
       var selected = $(this).val();

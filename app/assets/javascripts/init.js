@@ -2,7 +2,7 @@ this.App || (this.App = {});
 
 $( document ).on('turbolinks:load', function() {
   controller = $("body").data("controller")
-  if ($("body").data("namespace") !== undefined) {
+  if ($("body").data("namespace") !== undefined && $("body").data("namespace") != controller) {
     controller = $("body").data("namespace") + '_' + controller;
   }
   action = $("body").data("action")
@@ -16,7 +16,7 @@ $( document ).on('turbolinks:load', function() {
   if ((typeof(App[controller]) === 'object') && (typeof(App[controller][action]) === 'object')) {
     App[controller][action].init();
   }
-
+  
   $('form').validate();
   // alert('test');
   //
