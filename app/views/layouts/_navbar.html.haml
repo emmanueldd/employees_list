@@ -1,123 +1,133 @@
-- if pro_signed_in?
+- if true
   %nav.navbar.navbar-default
     .container
       .navbar-header
-        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
+        = link_to 'Tester Owfleek', '#', class: 'button navbar-toggle collapsed'
+        = link_to root_path, class: 'navbar-brand' do
+          -# .visible-xs-inline.visible-sm-inline= @title
+          = image_tag 'logo.png', class: 'logo'
 
-        %span.glyphicon.glyphicon-envelope.collapsed.navbar-message{"aria-hidden" => "true"}
-        %a.navbar-brand
-          .visible-xs-inline.visible-sm-inline= @title
-          = link_to root_path do
-            = image_tag 'logo.png', class: 'logo'
-            -# .visible-md-inline.visible-lg-inline Owfleek
-      / Collect the nav links, forms, and other content for toggling
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        %ul.nav.navbar-nav
-          %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
-            = link_to dashboard_home_index_path do
-              Tableau de bord
-              %span.sr-only (current)
-          %li{class: (request.env['PATH_INFO'] == dashboard_bookings_path ? 'active' : '')}
-            = link_to 'Agenda', dashboard_bookings_path
-          %li{class: (request.env['PATH_INFO'] == dashboard_missions_path ? 'active' : '')}
-            = link_to 'Prestations', dashboard_missions_path
-          %li{class: (request.env['PATH_INFO'] == dashboard_photos_path  ? 'active' : '')}
-            = link_to 'Photos', dashboard_photos_path
-        -# %form.navbar-form.navbar-leftm
-        -#   .form-group
-        -#     %input.form-control{:placeholder => "Search", :type => "text"}/
-        -#   %button.btn.btn-default{:type => "submit"} Submit
-        %ul.nav.navbar-nav.navbar-right
-          %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
-            = link_to 'Messages', dashboard_conversations_path
-          %li.divider.dropdown{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
-            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              = current_pro.email
-              %span.caret
-            %ul.dropdown-menu
-              %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
-                = link_to 'Mes informations', edit_pro_registration_path
-              %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
-                = link_to 'Mon profil', current_pro
-              %li.divider{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : ''), :role => "separator"}
-              %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
-                = link_to 'Déconnexion', destroy_user_session_path, method: :delete
-- elsif user_signed_in?
-  %nav.navbar.navbar-default
-    .container
-      .navbar-header
-        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-
-        %span.glyphicon.glyphicon-envelope.collapsed.navbar-message{"aria-hidden" => "true"}
-        %a.navbar-brand
-          .visible-xs-inline.visible-sm-inline= @title
-          = link_to root_path do
-            = image_tag 'logo.png', class: 'logo'
-            -# .visible-md-inline.visible-lg-inline Owfleek
-      / Collect the nav links, forms, and other content for toggling
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        %ul.nav.navbar-nav
-          %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
-            = link_to interface_home_index_path do
-              Tableau de bord
-              %span.sr-only (current)
-          %li{class: (request.env['PATH_INFO'] == interface_bookings_path ? 'active' : '')}
-            = link_to 'Agenda', interface_bookings_path
-          %li{class: (request.env['PATH_INFO'] == pros_path ? 'active' : '')}
-            = link_to 'Prestas', pros_path
-          -# %li{class: (request.env['PATH_INFO'] == interface_photos_path  ? 'active' : '')}
-          -#   = link_to 'Photos', interface_photos_path
-        %ul.nav.navbar-nav.navbar-right
-          %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
-            = link_to 'Messages', interface_conversations_path
-          %li.divider.dropdown{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
-            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              = current_user.email
-              %span.caret
-            %ul.dropdown-menu
-              %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
-                = link_to 'Mes informations', edit_pro_registration_path
-              %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
-                = link_to 'Mon profil', current_pro
-              %li.divider{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : ''), :role => "separator"}
-              %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
-                = link_to 'Déconnexion', destroy_user_session_path, method: :delete
 - else
-  %nav.navbar.navbar-default
-    .container
-      .navbar-header
-        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand
-          .visible-xs-inline.visible-sm-inline= @title
-          = link_to root_path do
-            = image_tag 'logo.png', class: 'logo'
-            -# .visible-md-inline.visible-lg-inline Owfleek
-      / Collect the nav links, forms, and other content for toggling
-      #bs-example-navbar-collapse-1.collapse.navbar-collapse
-        %ul.nav.navbar-nav
-          -# %li{class: (request.env['PATH_INFO'] == dashboard_bookings_path ? 'active' : '')}
-          -#   = link_to 'Agenda', dashboard_bookings_path
+  - if pro_signed_in?
+    %nav.navbar.navbar-default
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
 
-        -# %form.navbar-form.navbar-leftm
-        -#   .form-group
-        -#     %input.form-control{:placeholder => "Search", :type => "text"}/
-        -#   %button.btn.btn-default{:type => "submit"} Submit
-        %ul.nav.navbar-nav.navbar-right
-          %li{class: (request.env['PATH_INFO'] == new_user_session_path ? 'active' : '')}
-            = link_to 'Connexion client', new_user_session_path
-          %li{class: (request.env['PATH_INFO'] == new_pro_session_path ? 'active' : '')}
-            = link_to 'Connexion', new_pro_session_path
-          %li{class: (request.env['PATH_INFO'] == new_pro_registration_path ? 'active' : '')}
-            = link_to 'Inscription', new_pro_registration_path
+          %span.glyphicon.glyphicon-envelope.collapsed.navbar-message{"aria-hidden" => "true"}
+          %a.navbar-brand
+            .visible-xs-inline.visible-sm-inline= @title
+            = link_to root_path do
+              = image_tag 'logo.png', class: 'logo'
+              -# .visible-md-inline.visible-lg-inline Owfleek
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
+              = link_to dashboard_home_index_path do
+                Tableau de bord
+                %span.sr-only (current)
+            %li{class: (request.env['PATH_INFO'] == dashboard_bookings_path ? 'active' : '')}
+              = link_to 'Agenda', dashboard_bookings_path
+            %li{class: (request.env['PATH_INFO'] == dashboard_missions_path ? 'active' : '')}
+              = link_to 'Prestations', dashboard_missions_path
+            %li{class: (request.env['PATH_INFO'] == dashboard_photos_path  ? 'active' : '')}
+              = link_to 'Photos', dashboard_photos_path
+          -# %form.navbar-form.navbar-leftm
+          -#   .form-group
+          -#     %input.form-control{:placeholder => "Search", :type => "text"}/
+          -#   %button.btn.btn-default{:type => "submit"} Submit
+          %ul.nav.navbar-nav.navbar-right
+            %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
+              = link_to 'Messages', dashboard_conversations_path
+            %li.divider.dropdown{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
+              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                = current_pro.email
+                %span.caret
+              %ul.dropdown-menu
+                %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
+                  = link_to 'Mes informations', edit_pro_registration_path
+                %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
+                  = link_to 'Mon profil', current_pro
+                %li.divider{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : ''), :role => "separator"}
+                %li{class: (request.env['PATH_INFO'] == dashboard_home_index_path ? 'active' : '')}
+                  = link_to 'Déconnexion', destroy_user_session_path, method: :delete
+  - elsif user_signed_in?
+    %nav.navbar.navbar-default
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+
+          %span.glyphicon.glyphicon-envelope.collapsed.navbar-message{"aria-hidden" => "true"}
+          %a.navbar-brand
+            .visible-xs-inline.visible-sm-inline= @title
+            = link_to root_path do
+              = image_tag 'logo.png', class: 'logo'
+              -# .visible-md-inline.visible-lg-inline Owfleek
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
+              = link_to interface_home_index_path do
+                Tableau de bord
+                %span.sr-only (current)
+            %li{class: (request.env['PATH_INFO'] == interface_bookings_path ? 'active' : '')}
+              = link_to 'Agenda', interface_bookings_path
+            %li{class: (request.env['PATH_INFO'] == pros_path ? 'active' : '')}
+              = link_to 'Prestas', pros_path
+            -# %li{class: (request.env['PATH_INFO'] == interface_photos_path  ? 'active' : '')}
+            -#   = link_to 'Photos', interface_photos_path
+          %ul.nav.navbar-nav.navbar-right
+            %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
+              = link_to 'Messages', interface_conversations_path
+            %li.divider.dropdown{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
+              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                = current_user.email
+                %span.caret
+              %ul.dropdown-menu
+                %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
+                  = link_to 'Mes informations', edit_pro_registration_path
+                %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
+                  = link_to 'Mon profil', current_pro
+                %li.divider{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : ''), :role => "separator"}
+                %li{class: (request.env['PATH_INFO'] == interface_home_index_path ? 'active' : '')}
+                  = link_to 'Déconnexion', destroy_user_session_path, method: :delete
+  - else
+    %nav.navbar.navbar-default
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand
+            .visible-xs-inline.visible-sm-inline= @title
+            = link_to root_path do
+              = image_tag 'logo.png', class: 'logo'
+              -# .visible-md-inline.visible-lg-inline Owfleek
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            -# %li{class: (request.env['PATH_INFO'] == dashboard_bookings_path ? 'active' : '')}
+            -#   = link_to 'Agenda', dashboard_bookings_path
+
+          -# %form.navbar-form.navbar-leftm
+          -#   .form-group
+          -#     %input.form-control{:placeholder => "Search", :type => "text"}/
+          -#   %button.btn.btn-default{:type => "submit"} Submit
+          %ul.nav.navbar-nav.navbar-right
+            %li{class: (request.env['PATH_INFO'] == new_user_session_path ? 'active' : '')}
+              = link_to 'Connexion client', new_user_session_path
+            %li{class: (request.env['PATH_INFO'] == new_pro_session_path ? 'active' : '')}
+              = link_to 'Connexion', new_pro_session_path
+            %li{class: (request.env['PATH_INFO'] == new_pro_registration_path ? 'active' : '')}
+              = link_to 'Inscription', new_pro_registration_path

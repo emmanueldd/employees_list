@@ -1,0 +1,4 @@
+fr:
+  active_admin:
+    comments:
+      delete: 'Supprimer'

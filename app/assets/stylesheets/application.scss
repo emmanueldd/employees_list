@@ -48,7 +48,16 @@
     z-index: 2;
   }
 }
-
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar-brand {
+    float: left;
+    padding: 5px;
+    font-size: 18px;
+    line-height: 50px;
+    height: 50px;
+}
 .navbar-default {
   background-color: #fff;
   border-color: #fff;
@@ -81,7 +90,7 @@
 
 @media (max-width: 768px){
   .parallax {
-    background-attachment: inherit !important; 
+    background-attachment: inherit !important;
   }
   .time {
     width: 48%;
@@ -114,9 +123,6 @@
   }
   .modal-dialog {
     width: 900px !important;
-  }
-  .navbar {
-    margin-bottom: 0px;
   }
 }
 
