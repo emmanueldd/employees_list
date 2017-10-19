@@ -10,7 +10,10 @@
 
 .carousel-inner {
   height: 600px !important;
-  // .carousel-caption {
-  //   bottom: 30%;
-  // }
+  .carousel-caption {
+    p {
+      line-height: 20px;
+      font-size: 19px;
+    }
+  }
 }
