@@ -23,22 +23,22 @@ fr:
         supplement_half_long_hair: '5,0'
         title: 'ex: Nattes collées tête entière'
       defaults:
-        photo: 'Cette image sera la couverture de votre fiche'
-        youtube_url: 'ex: https://www.youtube.com/watch?v=8AfYbd--tpE'
-        facebook_url: 'https://www.facebook.com/macoiffeuseafro'
-        instagram_url: '@ma_coiffeuse_afro'
+        instagram_url: '@michelle_makeup'
         email: 'Votre Email'
         phone: 'Votre N° de téléphone'
         password: 'Mot de passe'
         current_password: 'Mot de passe actuel'
         password_confirmation: 'Retapez votre mot de passe'
         username: 'Pseudo'
-        name: 'ex: Dupont Rebecca'
+        first_name: 'Votre prénom'
+        last_name: 'Votre nom'
         birthday: 'Date de naissance'
       booking:
         reason_for_refusal: 'Raison du refus'
     labels:
       defaults:
+        first_name: "Prénom"
+        last_name: "Nom de famille"
         phone: "Téléphone"
         price: "Votre prix"
         supplement_half_long_hair: "Cheveux mi-longs"
