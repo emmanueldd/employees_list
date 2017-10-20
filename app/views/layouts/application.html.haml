@@ -1,17 +1,29 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Famousbarber
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    - if content_for?(:title)
+      %title
+        = yield(:title) + ' | Owfleek'
+      %meta{content: yield(:title) + ' | Owfleek', property: "og:title"}
+    - else
+      %title Owfleek - Devenez Indépendant
+      %meta{content: 'Owfleek - Devenez Indépendant', property: "og:title"}
+    - if content_for?(:meta_desc)
+      %meta{content: ActionView::Base.full_sanitizer.sanitize(yield(:meta_desc)), name: "description"}
+      %meta{content: ActionView::Base.full_sanitizer.sanitize(yield(:meta_desc)), property: "og:description"}
+    - else
+      %meta{content: "Owfleek - Acteurs de la Beauté, Soyez votre propre Patron. Prenez soin de vos clients, Owfleek s'occupe du reste", name: "description"}
+      %meta{content: "Owfleek - Acteurs de la Beauté, Soyez votre propre Patron. Prenez soin de vos clients, Owfleek s'occupe du reste", property: "og:description"}
+    %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name: "viewport"}
+
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag '//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyD7AY7a4QvfcJZww3qnQseigQuoDwSUK2M', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
   %body{"data-namespace": content_for(:namespace) || namespace, "data-action": content_for(:action_name) || action_name, "data-controller": content_for(:controller_name) || controller_name}
     = render "layouts/navbar"
     #wrapper
-      -# %div{class: ('container' unless controller_name == 'home' )}
       = yield
       = render 'layouts/footer'

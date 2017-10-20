@@ -18,16 +18,16 @@
           %h3
             Acteurs de la Beauté,
             %br
-            Soyez votre propre Patron
+            Devenez Indépendants
           %br
           %p Prenez soin de vos clients, Owfleek s'occupe du reste
           %br
           %br
           .row
-            = simple_form_for(@lead) do |f|
+            = simple_form_for(@lead, html: { id: 'slide-form-lead', class: 'slide-form-lead' } ) do |f|
               .col-md-4.col-md-offset-3
                 %div
                   .form-inputs
-                    = f.input_field :email, as: :email, required: true, autofocus: true
+                    = f.input_field :email, as: :email, required: true
               .col-md-2
                 %input#submit.submit.button{:type => "submit", :value => "Tester Owfleek"}/

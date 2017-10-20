@@ -69,6 +69,8 @@ gem "font-awesome-rails"
 
 gem "figaro"
 
+gem 'rack-reverse-proxy', :require => 'rack/reverse_proxy'
+
 group :development, :test do
   gem 'seed_dump'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

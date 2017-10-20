@@ -16,8 +16,10 @@ $( document ).on('turbolinks:load', function() {
   if ((typeof(App[controller]) === 'object') && (typeof(App[controller][action]) === 'object')) {
     App[controller][action].init();
   }
-  
-  $('form').validate();
+
+  $('form').each(function() {
+    $(this).validate();
+  });
   // alert('test');
   //
   // if ((typeof(App[controller]) === 'object') && (typeof(App[controller][action]) === 'object')) {

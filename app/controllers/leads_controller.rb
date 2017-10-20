@@ -23,6 +23,6 @@ class LeadsController < ApplicationController
     end
 
     def lead_params
-      params.require(:lead).permit(:email, :first_name, :last_name, :phoneinstagram_url)
+      params.require(:lead).permit(:email, :first_name, :last_name, :phone, :instagram_url)
     end
 end
