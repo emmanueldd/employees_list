@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       mount_devise_token_auth_for 'Pro', at: 'pro_auth'
       as :pro do
         resources :pros
+        resources :employees
       end
     end
   end

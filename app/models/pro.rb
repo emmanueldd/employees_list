@@ -21,16 +21,19 @@
 #
 
 class Pro < ApplicationRecord
-
   mount_uploader :avatar, AvatarUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   include DeviseTokenAuth::Concerns::User
+
   devise :validatable, :omniauthable
+  
   include Concerns::Oauth
 
+  has_many :employees
   has_many :business_hours
   has_many :unavailabilities
   has_many :missions

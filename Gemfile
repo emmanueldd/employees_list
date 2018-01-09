@@ -71,6 +71,8 @@ gem "figaro"
 
 gem 'rack-reverse-proxy', :require => 'rack/reverse_proxy'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
   gem 'seed_dump'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
