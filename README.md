@@ -5,20 +5,19 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
+* Systems version
+Rails 5.1.4
 
 * Configuration
+bundle install
 
 * Database creation
+rails db:create
 
 * Database initialization
+rails db:migrate
 
-* How to run the test suite
+* Run the server
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Api for the employees list project from the Stephen Grider course "The Complete React Native and Redux Course"
